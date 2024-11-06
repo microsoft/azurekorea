@@ -16,13 +16,13 @@ authors:
   annajeong:
     name: annajeong
     display_name: Boram Jeong
-    avatar: 'assets/images/profile/annajeong.jpg'
+    avatar: 'assets/images/profiles/annajeong.jpg'
     email: annajeong@microsoft.com
     description: "Azure Infra Technical Specialist"
   rose:
     name: rose
     display_name: HyeonYeong Seo    
-    avatar: 'assets/images/profile/roseseo.jpg'
+    avatar: 'assets/images/profiles/roseseo.jpg'
     email: roseseo@microsoft.com
     description: "Azure Infra Specialist @Microsoft"
 
