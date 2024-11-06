@@ -83,12 +83,12 @@ Virtual WAN을 온프레미스와의 연결 뿐 아니라, Azure VNet 간의 연
 
 참조:
 
-[Azure VPN Gateway topology and design] [About Azure VPN Gateway | Microsoft Learn](https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways)
+[Azure VPN Gateway topology and design] [https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways](https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways)
 
-[IPSec/IKE policy] [Configure custom IPsec/IKE connection policies for S2S VPN & VNet-to-VNet: Azure portal — Azure VPN Gateway | Microsoft Learn](https://learn.microsoft.com/en-us/azure/vpn-gateway/ipsec-ike-policy-howto)
+[IPSec/IKE policy] [https://learn.microsoft.com/en-us/azure/vpn-gateway/ipsec-ike-policy-howto](https://learn.microsoft.com/en-us/azure/vpn-gateway/ipsec-ike-policy-howto)
 
-[Azure ExpressRoute] [Azure ExpressRoute Overview: Connect over a private connection | Microsoft Learn](https://learn.microsoft.com/en-us/azure/expressroute/expressroute-introduction)
+[Azure ExpressRoute] [https://learn.microsoft.com/en-us/azure/expressroute/expressroute-introduction](https://learn.microsoft.com/en-us/azure/expressroute/expressroute-introduction)
 
-[ER High Availability] [Azure ExpressRoute: Designing for high availability | Microsoft Learn](https://learn.microsoft.com/en-us/azure/expressroute/designing-for-high-availability-with-expressroute)
+[ER High Availability] [https://learn.microsoft.com/en-us/azure/expressroute/designing-for-high-availability-with-expressroute](https://learn.microsoft.com/en-us/azure/expressroute/designing-for-high-availability-with-expressroute)
 
-[Azure Virtual WAN] [Azure Virtual WAN Overview | Microsoft Learn](https://learn.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about)
+[Azure Virtual WAN] [https://learn.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about](https://learn.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about)
