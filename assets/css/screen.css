@@ -26,7 +26,7 @@ a:hover {
 }
 
 .nav-link{
-    font-size: 12px !important;
+    font-size: 15px !important;
 
 }
 
@@ -151,7 +151,7 @@ section.recent-posts {
 
 .listfeaturedtag h2.card-title,
 .listrecent h2.card-title {
-    font-size: 1.0rem;
+    font-size: 1.2rem;
     font-weight: 700;
     line-height: 1.25;
 }
@@ -159,7 +159,7 @@ section.recent-posts {
 .listfeaturedtag h4.card-text,
 .listrecent h4.card-text {
     color: rgba(0, 0, 0, .44);
-    font-size: 0.8rem;
+    font-size: 1.0rem;
     line-height: 1.6;
     font-weight: 400;
 }
@@ -315,7 +315,7 @@ span.post-read-more a:hover {
 
 .mainheading h1.sitetitle {
     /* font-family: Righteous; */
-    font-size: 2rem;
+    font-size: 42px;
 
 }
 
@@ -325,7 +325,7 @@ span.post-read-more a:hover {
 }
 
 .mainheading p {
-    font-size: 20px !important;
+    font-size: 26px !important;
     color: rgba(0, 0, 0, .84);
 }
 
