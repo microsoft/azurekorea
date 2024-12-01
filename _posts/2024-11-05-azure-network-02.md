@@ -2,7 +2,7 @@
 layout: post
 title:  "Azure 네트워크 이해하기 (2/3)"
 author: annajeong
-categories: [ Azure, Azure Networking, Azure Virtual Network, Azure Route Table ]
+categories: [ Solution ]
 image: assets/images/thumnails/azure_network_2.png
 ---
 

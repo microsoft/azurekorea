@@ -2,15 +2,20 @@
 layout: default
 title: Home
 ---
+
+{% if page.url == "/" %}
+
+<!-- Featured
+================================================== -->
+
+
+{% endif %}
+
 <!-- Posts Index
 ================================================== -->
 <section class="recent-posts">
 
-    <div class="section-title">
-
-        <h2><span>All Stories</span></h2>
-
-    </div>
+    {% include header.html %}
 
     <div class="row listrecent">
 
@@ -26,10 +31,11 @@ title: Home
 
 <!-- Pagination
 ================================================== -->
-<div class="bottompagination">
-<div class="pointerup"><i class="fa fa-caret-up"></i></div>
+<!-- <div class="bottompagination"> -->
+<!-- <div class="pointerup"><i class="fa fa-caret-up"></i></div> -->
+<section class="navigation">
 <span class="navigation" role="navigation">
     {% include pagination.html %}
 </span>
 </div>
-
+</section>

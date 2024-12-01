@@ -2,7 +2,8 @@
 layout: post
 title:  "Azure 네트워크 이해하기 (1/3)"
 author: annajeong
-categories: [ Azure, Azure Network, Azure Global Network, Azure Virtual Network ]
+tag: [ Azure, Azure Network, Azure Global Network, Azure Virtual Network ]
+category: [ Solution ]
 image: assets/images/thumnails/azure_network_1.png
 ---
 

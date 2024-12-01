@@ -2,7 +2,8 @@
 layout: post
 title:  "Azure 네트워크 이해하기 (3/3)"
 author: rose
-categories: [ Azure, Azure Networking, Hybrid Cloud ]
+tags: [ Azure, Azure Networking, Hybrid Cloud ]
+categories: [ Solution ]
 image: assets/images/thumnails/azure_network_3.png
 ---
 
