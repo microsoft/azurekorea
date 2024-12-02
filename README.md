@@ -112,3 +112,8 @@
 4. 상단의 Pull Requests 를 클릭합니다.
     
     ![image.png](assets/images/guide/image3.png)
+
+5. New pull request 버튼을 클릭합니다.
+6. 변경 내용을 확인한 후 Create pull request 버튼을 클릭합니다.
+
+    ![image.png](assets/images/guide/image4.png)
