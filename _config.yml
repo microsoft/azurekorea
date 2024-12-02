@@ -25,6 +25,18 @@ authors:
     avatar: 'assets/images/profiles/roseseo.jpg'
     email: roseseo@microsoft.com
     description: "Azure Infra Specialist @Microsoft"
+  junginlee:
+    name: junginlee
+    display_name: JungIn Lee
+    avatar: 'assets/images/profiles/junginlee.jpg'
+    email: junginlee@microsoft.com
+    description: "Specialist Team Unit Lead at Microsoft Korea"
+  ilkim:
+    name: ilkim
+    display_name: Il Joong Kim
+    avatar: 'assets/images/profiles/ilkim.png'
+    email: ilkim@microsoft.com
+    description: "Technical Architect at Microsoft Innovation Hub"
 
 # Plugins
 plugins:

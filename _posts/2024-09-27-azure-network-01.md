@@ -5,7 +5,6 @@ author: annajeong
 tag: [ Azure, Azure Network, Azure Global Network, Azure Virtual Network ]
 category: [ Solution ]
 image: assets/images/thumnails/azure_network_1.png
-featured: true
 ---
 
 > 많은 기업들이 확장성, 고가용성, 비용 등 다양한 이유로 클라우드를 채택하고 사용하는 것이 보편화되고 있습니다. 클라우드를 시작할 때 가장 먼저 구성하게 되는 요소가 바로 네트워크인데요. 이번 포스트에서는 Azure의 네트워크에 대해 소개 드리도록 하겠습니다.
