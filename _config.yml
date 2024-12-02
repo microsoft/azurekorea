@@ -37,6 +37,13 @@ authors:
     avatar: 'assets/images/profiles/ilkim.png'
     email: ilkim@microsoft.com
     description: "Technical Architect at Microsoft Innovation Hub"
+  oskwon:
+    name: oskwon
+    display_name: Ohsung Kwon
+    avatar: 'assets/images/profiles/oskwon.png'
+    email: oskwon@microsoft.com
+    description: "Technical Architect at Microsoft Innovation Hub"
+  
 
 # Plugins
 plugins:
