@@ -12,7 +12,7 @@ post_class: post-template
 
         <!-- Post Share -->
         <div class="col-md-2 pl-0">
-            {% include share.html %}
+            <!-- {% include share.html %} -->
         </div>
 
         <!-- Post -->
@@ -32,7 +32,8 @@ post_class: post-template
                         {% endif %}
                     </div>
                     <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
-                        <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>
+                        <!-- <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a> -->
+                        <span class="author-description"><b>{{ author.display_name }}</b></span><br>
                         <span class="author-description">{{ author.description }}</span>
                     </div>
                 </div>
@@ -53,9 +54,9 @@ post_class: post-template
             {% if page.image %}
 
             {% if site.lazyimages == "enabled" %}
-            <img class="featured-image img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
+            <!-- <img class="featured-image img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}"> -->
             {% else %}
-            <img class="featured-image img-fluid" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
+            <!-- <img class="featured-image img-fluid" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}"> -->
             {% endif %}
 
             {% endif %}
@@ -142,7 +143,7 @@ post_class: post-template
 
 <!-- Begin Comments
 ================================================== -->
-{% if page.comments != false %}
+<!-- {% if page.comments != false %}
     <div class="container">
         <div id="comments" class="row justify-content-center mb-5">
             <div class="col-md-8">
@@ -150,7 +151,7 @@ post_class: post-template
             </div>
         </div>
     </div>
-{% endif %}
+{% endif %} -->
 <!--End Comments
 ================================================== -->
 

@@ -5,20 +5,29 @@ License: https://www.wowthemes.net/freebies-license/
 */
 @media screen and (min-width:1500px) {
     html { font-size:18px; } /* Increase the font size on higher resolutions */
-    .container {max-width:80%;}
+    .container {max-width:80%; max-width: 1140px;}
 }
 .mainheading {
     padding: 1rem 0rem;
 }
 
 a {
-    color: #00ab6b;
+    color: rgba(0,0,0,0.54);
     transition: all 0.2s;
 }
 
 a:hover {
-    color: #038252;
+    color: rgba(0,0,0,0.68);
     text-decoration: none;
+}
+
+.section-title {
+    padding-bottom: 20px !important;
+}
+
+.nav-link{
+    font-size: 15px !important;
+
 }
 
 pre {
@@ -117,7 +126,7 @@ section.recent-posts {
 }
 
 .maxthumb {
-    max-height: 300px;
+    max-height: 200px;
     overflow: hidden;
 }
 
@@ -142,7 +151,7 @@ section.recent-posts {
 
 .listfeaturedtag h2.card-title,
 .listrecent h2.card-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     line-height: 1.25;
 }
@@ -150,7 +159,7 @@ section.recent-posts {
 .listfeaturedtag h4.card-text,
 .listrecent h4.card-text {
     color: rgba(0, 0, 0, .44);
-    font-size: 0.95rem;
+    font-size: 1.0rem;
     line-height: 1.6;
     font-weight: 400;
 }
@@ -305,12 +314,19 @@ span.post-read-more a:hover {
 }
 
 .mainheading h1.sitetitle {
-    font-family: Righteous;
+    /* font-family: Righteous; */
+    font-size: 42px;
+
 }
 
 .mainheading h1.posttitle {
     font-weight: 700;
     margin-bottom: 1rem;
+}
+
+.mainheading p {
+    font-size: 26px !important;
+    color: rgba(0, 0, 0, .84);
 }
 
 .footer {
@@ -898,4 +914,8 @@ iframe {
 .lazyimg[data-srcset] {
     opacity: 0;
     transition: opacity .25s;
+}
+
+section.navigation {
+    text-align: center;
 }
