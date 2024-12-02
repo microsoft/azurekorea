@@ -3,7 +3,7 @@ layout: post
 title:  "Do more with less : Microsoft Azure 베스트 프랙티스를 통한 쉐도우 IT 최적화"
 author: oskwon
 tag: [ Azure, Shadow It, Cost Saving Tips, Azurebestpractice ]
-category: [ Solution ]
+category: [ Update ]
 image: assets/images/thumnails/1_Cxw6GhmtHcWoW1ymgAi2rQ.webp
 ---
 
