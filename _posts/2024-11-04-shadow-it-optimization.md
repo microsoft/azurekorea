@@ -7,8 +7,6 @@ category: [ Solution ]
 image: assets/images/thumnails/1_Cxw6GhmtHcWoW1ymgAi2rQ.webp
 ---
 
-### Do more with less : Microsoft Azure 베스트 프랙티스를 통한 쉐도우 IT 최적화
-
 ![img](https://cdn-images-1.medium.com/max/1200/1*Uf3ukksWUNG4MTPHaNaQLg.png)
 
 “당신이 모르는 것을 당신은 모른다” IT 세계에서 이러한 숨겨진 영역을 밝히는 것은 놀라움을 방지하는 데 도움이 됩니다.
