@@ -43,7 +43,12 @@ authors:
     avatar: 'assets/images/profiles/oskwon.png'
     email: oskwon@microsoft.com
     description: "Technical Architect at Microsoft Innovation Hub"
-  
+jyseong:
+    name: jyseong
+    display_name: Ji Yong Seong
+    avatar: 'assets/images/profiles/_jyseong.jpg'
+    email: jyseong@microsoft.com
+    description: "SR TECHNICAL SPECIALIST"
 
 # Plugins
 plugins:
