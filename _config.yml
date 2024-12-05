@@ -55,6 +55,12 @@ authors:
     avatar: 'assets/images/profiles/_jyseong.jpg'
     email: jyseong@microsoft.com
     description: "SR TECHNICAL SPECIALIST"
+  yorha:
+    name: yorha
+    display_name: Youkhang Rha
+    avatar: 'assets/images/profiles/yorha.jpg'
+    email: yorha@microsoft.com
+    description: "Microsoft Technical Specialist"
 
 # Plugins
 plugins:
