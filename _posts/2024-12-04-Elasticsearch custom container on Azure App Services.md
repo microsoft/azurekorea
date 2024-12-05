@@ -13,7 +13,7 @@ image: assets/images/thumnails/B1.png
 # Azure App Services 상의 Elasticsearch 사용자 정의 컨테이너
 이번 블로그에서는, Azure App Service에 Elasticsearch 컨테이너를 배포하는 방법에 대해서 살펴보겠습니다.
 
-다음의 설명에서는 **elasticsearch:7.17.25** 컨테이너 이미지를 사용하게 됩니다. 해당 이미지는 Docker Hub [elasticsearch - Official Image | Docker Hub](https://hub.docker.com/_/elasticsearch/)에서 사용할 수 있습니다.
+다음의 설명에서는 **elasticsearch:7.17.25** 컨테이너 이미지를 사용하게 됩니다. 해당 이미지는 Docker Hub [elasticsearch - Official Image](https://hub.docker.com/_/elasticsearch/)에서 사용할 수 있습니다.
 
 Azure App Service에 컨테이너 이미지를 배포하는 동안, Docker 컨테이너에는 다음과 같은 오류가 발생하게 됩니다:
 
@@ -51,7 +51,7 @@ https://<AppServiceName>.scm.azurewebsites.net/newui 에서  Environment 탭으�
 노트
 기본 Linux 앱 서비스 또는 사용자 지정 Linux 컨테이너에서는 앱 설정 이름에 있는 중첩된 JSON 키 구조(예: ApplicationInsights:InstrumentationKey)를 ApplicationInsights__InstrumentationKey와 같이 구성해야 합니다. 즉, :는 __(밑줄 두 개)로 대체되어야 하며, 앱 설정 이름에 있는 모든 점(.)은 _(밑줄 하나)로 대체됩니다.
 ```
-자세한 내용은 [Configure apps - Azure App Service | Microsoft Learn](https://learn.microsoft.com/en-us/azure/app-service/configure-common?tabs=portal#configure-app-settings)를 참고하시기 바랍니다.
+자세한 내용은 [Configure apps - Azure App Service](https://learn.microsoft.com/en-us/azure/app-service/configure-common?tabs=portal#configure-app-settings)를 참고하시기 바랍니다.
 
 해당 문제를 해결하려면, 컨테이너 이미지를 생성하는 동안 elasticsearch.yml 파일에서 discovery.type을 구성하여야 합니다.
 
