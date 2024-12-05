@@ -30,8 +30,9 @@
 수정할 부분은 아래와 같습니다.
 
 - _posts : 실제 포스트.md 업로드 폴더
-- assets/image/profiles : 프로필 사진 업로드 폴더
-- assets/image/thumbnails : 포스트 썸네일(필수) 업로드 폴더
+- assets/images/profiles : 프로필 사진(필수) 업로드 폴더
+- assets/images/thumbnails : 포스트 썸네일(필수) 업로드 폴더
+- assets/images/{본인alias} (생성): 포스트 내 이미지 업로드 폴더
 - _config.yml : 작성자 정보 등록 파일 (최초 1회)
 
 **작성자 정보 등록**
@@ -78,11 +79,11 @@
 
 **[이미지 첨부]**
 
-1. _post 폴더 하위에 images 폴더에 이미지를 업로드합니다.
+1. assets/images/{alias} 폴더 하위에 images 폴더에 이미지를 업로드합니다.
 2. 아래와 같이 사용합니다.
     
     ```markdown
-    ![이미지 설명](./images/{image_name})
+    ![이미지 설명](../assets/images/{alias}/{image_name})
     ```
     
 

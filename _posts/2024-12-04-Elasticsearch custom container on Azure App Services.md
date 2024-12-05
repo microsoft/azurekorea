@@ -43,7 +43,7 @@ Azure App Service는 [Platform as a Service (PaaS)](https://learn.microsoft.com/
 
 https://<AppServiceName>.scm.azurewebsites.net/newui 에서  Environment 탭으로 이동합니다.
 
-![](./images/B1.png)
+![](../assets/images/jyseong/images/B1.png)
 
 기본적으로 Linux Azure App Service 또는 WebApp for Container는 앱 설정의 모든 마침표를 밑줄(_)로 바꿉니다.
 
@@ -80,7 +80,7 @@ discovery.type: single-node
 
 test 폴더 구조는 다음과 같습니다.
 
-![](./images/B3.png)
+![](../assets/images/jyseong/B3.png)
 
 2. docker 이미지 빌드 및 실행
 
@@ -88,11 +88,11 @@ Docker 빌드 명령: **docker build -t custom-elasticsearch:7.17.25**
 
 Docker 실행 명령: **docker run -d -p 1234:9200 custom-elasticsearch:7.17.25**
 
-![](./images/B4.png)
+![](../assets/images/jyseong/B4.png)
 
 3. [https://localhost:1234](https://localhost:1234)를 통해서 어플리케이션으로 이동합니다.
 
-![](./images/B5.png)
+![](../assets/images/jyseong/B5.png)
 
 4. 다음에는, 실행 중인 Docker 이미지를 Azure Container Registry(ACR)나 여러 분이 선호하는 repository에 푸시 합니다.
 
@@ -104,16 +104,16 @@ docker tag custom-elasticsearchlatest:7.17.25 acrname.azurecr.io/custom-elastics
 docker push acrname.azurecr.io/custom-elasticsearch:1
 ```
 
-![](./images/B6.png)
+![](../assets/images/jyseong/B6.png)
 
 5. Elasticsearch Docker 이미지는 리소스를 많이 사용하므로 충분한 메모리를 제공하기 위해 고-메모리(high-memory) 구성 App Service Plan(ASP)을 사용해야 합니다.
 
-![](./images/B7.png)
+![](../assets/images/jyseong/B7.png)
 
 6. 컨테이너가 포트 9200에서 수신 중이므로 앱 서비스를 최신 Docker 이미지와 태그로 업데이트하고 애플리케이션 설정 **WEBSITES_PORT=9200**을 추가해야 합니다.
 
 7. 컨테이너가 성공적으로 시작되었고, 앱 서비스는 아무런 문제 없이 동작하게 될 것입니다.
 
-![](./images/B8.png)
+![](../assets/images/jyseong/B8.png)
 
 즐거운 배움이 되었길 바랍니다. :smile:
