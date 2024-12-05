@@ -37,7 +37,7 @@ Azure App Service에 컨테이너 이미지를 배포하는 동안, Docker 컨�
 
 Azure App Service는 [Platform as a Service (PaaS)](https://learn.microsoft.com/en-us/azure/app-service/overview#why-use-app-service)이기 때문에, ***vm.max_map_count***를 수정할 수 있는 권한이 없습니다.
 
-이 문제는 ***discovery.type=single-node*** 앱 설정을 추가함으로서 영향을 최소화할 수 있습니다. 자세한 내용은 [Bootstrap Checks | Elasticsearch Guide [8.16] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html#single-node-discovery)을 참고하시기 바랍니다.
+이 문제는 ***discovery.type=single-node*** 앱 설정을 추가함으로서 영향을 최소화할 수 있습니다. 자세한 내용은 [Bootstrap Checks - Elasticsearch Guide [8.16]](https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html#single-node-discovery)을 참고하시기 바랍니다.
 
 앱 설정을 변경하여도 컨테이너는 같은 오류를 발생시키게 될 것입니다. 앱 설정은 kudu ***"newui"*** 포털을 통해서 확인이 가능합니다.
 

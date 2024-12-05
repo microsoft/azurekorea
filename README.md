@@ -77,6 +77,13 @@
 3. Markdown을 활용해 내용을 작성합니다.
 4. 작성이 완료되면 thumbnails로 사용할 이미지를 assets/images/thumbnails에 복사한 뒤, 상단의 image 부분을 수정합니다.
 
+**[링크 첨부]**
+1. 아래와 같이 사용합니다.
+    ```markdown
+    [링크 설명](http://)
+    ```
+    * 링크 설명에 '|'가 있으면 인식이 안됩니다.
+
 **[이미지 첨부]**
 
 1. assets/images/{alias} 폴더 하위에 images 폴더에 이미지를 업로드합니다.
