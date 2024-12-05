@@ -49,7 +49,12 @@ authors:
     avatar: 'assets/images/profiles/srjeon.jpg'
     email: srjeon@microsoft.com
     description: "Azure Solution Team Lead at Microsoft Korea"
-  
+jyseong:
+    name: jyseong
+    display_name: Ji Yong Seong
+    avatar: 'assets/images/profiles/_jyseong.jpg'
+    email: jyseong@microsoft.com
+    description: "SR TECHNICAL SPECIALIST"
 
 # Plugins
 plugins:
