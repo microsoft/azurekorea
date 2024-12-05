@@ -43,6 +43,12 @@ authors:
     avatar: 'assets/images/profiles/oskwon.png'
     email: oskwon@microsoft.com
     description: "Technical Architect at Microsoft Innovation Hub"
+  srjeon:
+    name: srjeon
+    display_name: Seung Rok Jeon
+    avatar: 'assets/images/profiles/srjeon.jpg'
+    email: srjeon@microsoft.com
+    description: "Azure Solution Team Lead at Microsoft Korea"
 jyseong:
     name: jyseong
     display_name: Ji Yong Seong
