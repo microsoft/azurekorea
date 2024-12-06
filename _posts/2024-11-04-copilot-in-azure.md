@@ -13,14 +13,14 @@ image: assets/images/thumnails/copilot-in-azure.webp
 
 [Microsoft Copilot in Azure-AI Companion and Assistant | Microsoft Azure](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fproducts%2Fcopilot%3Fmsockid%3D354816183e85639134c002c03fac6293%23Overview&data=05%7C02%7Csrjeon%40microsoft.com%7Cf372a69f0fff4f59817f08dcf7b98817%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638657623438138579%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=ZZAzd2upL9WCZTy9fRqQCgB1Ct%2BCYdr%2B7nzFUimP8z4%3D&reserved=0)
 
-![Copilot in Azure thumbnail](assets/images/thumnails/copilot-in-azure.webp)
+![Copilot in Azure thumbnail](../assets/images/thumnails/copilot-in-azure.webp)
 
 아주 쉽습니다. Azure portal 에서 Copilot 을 브라우저 안에서 부르시면 됩니다. (현재는 Preview 상태이므로 신청하셔서 사용해 보세요)
 이전처럼 포털에 접속하여 브라우저를 하나 이상 더 띄우고 docu, 유투브 등을 키워드와 문장 중심으로 검색하여 가장 알맞은 것을 선택하고, 읽어 보고, 이해한 뒤에 다시 포털로 돌아와서 커맨드나 메뉴를 따라 들어가는 것은….. 이미 옛날 방식이 되어 가는 것이죠.
 이제는 여러분들이 생각하고 계신 ‘무엇을 하고 싶은지’를 자연어로 코파일럿에게 물어보시고, 그에 맞는 답을 코파일럿이 답을 해 주면 판단하시고, 포털에서 실행까지 연동시키면 됩니다.
 작년 Ignite 행사에서 소개로 나온 영상을 보시면 좀 더 쉽게 이해가 되실 겁니다.
 
-[2023 Ignite Copilot in Azure 영상](https://youtu.be/OW0R-vD9pkw)
+[![2023 Ignite Copilot in Azure 영상](https://img.youtube.com/vi/OW0R-vD9pkw/0.jpg)](https://youtu.be/OW0R-vD9pkw)
 
 자, 그럼 어떻게 활용하면 될지 사례를 통해 한번 알아 볼까요?
 코파일럿과 소통을 잘 하시려면 prompt 를 잘 선택하셔야 합니다.

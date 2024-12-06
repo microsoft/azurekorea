@@ -52,7 +52,7 @@ authors:
   jyseong:
     name: jyseong
     display_name: Ji Yong Seong
-    avatar: 'assets/images/profiles/_jyseong.jpg'
+    avatar: 'assets/images/profiles/jyseong.jpg'
     email: jyseong@microsoft.com
     description: "SR TECHNICAL SPECIALIST"
   yorha:
@@ -61,6 +61,48 @@ authors:
     avatar: 'assets/images/profiles/yorha.jpg'
     email: yorha@microsoft.com
     description: "Microsoft Technical Specialist"
+  seojiyoung:
+    name: seojiyoung
+    display_name: Jiyoung Seo
+    avatar: 'assets/images/profiles/seojiyoung.jpg'
+    email: seojiyoung@microsoft.com
+    description: "SR SPECIALIST - Data&AI"
+  kiyoungkim:
+    name: kiyoungkim
+    display_name: Ki Young Kim
+    avatar: 'assets/images/profiles/kiyoungkim.jpg'
+    email: kiyoungkim@microsoft.com
+    description: "Data& AI Technical Specialist at Microsoft Korea"
+  daekeunkim:
+    name: daekeunkim
+    display_name: Dae Keun Kim
+    avatar: 'assets/images/profiles/daekeunkim.jpg'
+    email: daekeunkim@microsoft.com
+    description: "SR TECHNICAL SPECIALIST"
+  shki:
+      name: shki
+      display_name: Se Hee Kim
+      avatar: 'assets/images/profiles/shki.jpg'
+      email: shki@microsoft.com
+      description: "SR TECHNICAL SPECIALIST"
+  sanghlee:
+      name: sanghlee
+      display_name: Sang Hoon Lee
+      avatar: 'assets/images/profiles/default.png'
+      email: sanghlee@microsoft.com
+      description: "SR TECHNICAL SPECIALIST"
+  taeyok:
+      name: taeyok
+      display_name: Tae Young Kim
+      avatar: 'assets/images/profiles/taeyok.jpg'
+      email: taeyok@microsoft.com
+      description: "SR TECHNICAL SPECIALIST"
+  duchoi:
+      name: duchoi
+      display_name: Duk Soon Choi
+      avatar: 'assets/images/profiles/duchoi.jpg'
+      email: duchoi@microsoft.com
+      description: "SR TECHNICAL SPECIALIST"
 
 # Plugins
 plugins:
