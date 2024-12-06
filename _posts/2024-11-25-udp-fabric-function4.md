@@ -4,7 +4,7 @@ title:  "Unified Data platform Fabric 기능 (4/4): 실시간 인텔리전스, �
 author: kiyoungkim
 tag: [ Azure, Azure Fabric ]
 category: [ Update ]
-image: assets/images/thumnails/fabric-function3.png
+image: assets/images/thumnails/fabric-function4.png
 featured: true
 ---
 
