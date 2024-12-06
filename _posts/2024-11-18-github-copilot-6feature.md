@@ -4,11 +4,10 @@ title:  "GitHub Copilot for Azure : 6가지 핵심 기능들"
 author: jyseong
 tag: [Github, Github Copilot]
 category: [ Update ]
-image: assets/images/thumnails/jyseong-ghc.png
+image: assets/images/thumnails/jyseong-ghc.jpg
 
 ---
 
-### GitHub Copilot for Azure : 6가지 핵심 기능들
 
 이 포스팅은 [AmyBoyd](https://techcommunity.microsoft.com/users/amyboyd/386246) 님의 [GitHub Copilot for Azure: 6 Must-Try Features](https://techcommunity.microsoft.com/blog/azuredevcommunityblog/github-copilot-for-azure-6-must-try-features/4283126) 글을 참고하여 한국 개발자들도 이해하기 쉽도록 작성하였습니다.
 
