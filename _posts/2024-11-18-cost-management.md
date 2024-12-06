@@ -23,29 +23,29 @@ Usage / ActualCost / AmortizedCost를 Query 해 볼 수 있습니다.
 
 Query — Usage 항목에 POST 형태의 Query의 샘플을 제공 하고 있는데, 여기서 Try It을 누르시게 되면 Browser에서 직접 Query를 실행 해 볼 수 있습니다.
 
-![img](../assets/images/duchoi/cost2.jpg)
+![img](../assets/images/duchoi/cost2.png)
 
 계정 확인 요청이 있고, 계정을 확인합니다.
 
-![img](../assets/images/duchoi/cost3.jpg)
+![img](../assets/images/duchoi/cost3.png)
 
 사용 계정 확인 요청
 
 멀티 테넌트를 사용하고 있다면, Query할 테넌트도 선택 합니다.
 
-![img](../assets/images/duchoi/cost4.jpg)
+![img](../assets/images/duchoi/cost4.png)
 
 테넌트 확인
 
 테넌트 선택을 변경 할 필요가 있을 경우에는, Broswer를 완전히 나갔다가 다시 들어오시면 Sign-In 부터 다시 시작 됩니다.
 
-![img](../assets/images/duchoi/cost5.jpg)
+![img](../assets/images/duchoi/cost5.png)
 
 Rest API Query 테스트 화면
 
 Query를 사용할 때 다음의 컬럼을 Body에 사용할 수 있습니다.
 
-![img](../assets/images/duchoi/cost6.jpg)
+![img](../assets/images/duchoi/cost6.png)
 
 Body 컬럼 설명
 
@@ -90,9 +90,9 @@ Query 에 대한 응답
 
 문서를 좀 더 확인 해 보면, Request Body의 Properties를 볼 수 있는데, 그 중 ExportType을 확인해 보면
 
-![img](../assets/images/duchoi/cost7.jpg)
+![img](../assets/images/duchoi/cost7.png)
 
 어떤 형태의 응답을 받을지 설정 할 수 있습니다. 여기서 AmortizedCost로 Request를 하시게 되면, ActualCost / AmortizedCost / Usage 를 선택 할 수 있습니다.
 
-![img](../assets/images/duchoi/cost8.jpg)
+![img](../assets/images/duchoi/cost8.png)
 다음번에는 Azure Portal 에서 제공하고 있는 API Playground (preview)를 사용하여 Rest API로 Query 후, 응답을 Excel 형태로 Export 받는 방법을 알아보도록 하겠습니다.
