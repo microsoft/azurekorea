@@ -5,7 +5,6 @@ author: junginlee
 tag: [ Artificial Intelligence ]
 category: [ Solution ]
 image: assets/images/thumnails/0_JKw8r1AuSAw9Qv8r.gif
-featured: true
 ---
 
 *본 글은 [Introducing o1: OpenAI’s new reasoning model series for developers and enterprises on Azure](https://azure.microsoft.com/en-us/blog/introducing-o1-openais-new-reasoning-model-series-for-developers-and-enterprises-on-azure/) 의 많은 내용을 참고하여 씌여졌습니다.*

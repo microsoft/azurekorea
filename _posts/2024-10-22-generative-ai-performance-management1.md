@@ -5,7 +5,6 @@ author: ilkim
 tag: [ Azure Load Testing, Azure OpenAI ]
 category: [ Solution ]
 image: assets/images/thumnails/1_gXhVHIUxmWKImculHU175Q.webp
-featured: true
 ---
 생성형 AI 앱들의 성능 지표들로 [*그라운딩(Groundedness), 관련성(Relevance), 일관성(Coherence), 유창성(Fluency), 유사성(Similarity)*](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/concept-model-monitoring-generative-ai-evaluation-metrics)과 같은 답변의 품질 요소를 매우 중요하게 이야기합니다. 그러나 프로덕션 서비스를 위해서는 기존 앱과 동일하게 AI 답변의 응답 속도(Latency) 및 처리율(Throughtput)이 매우 중요한 성능 지표로 강조되며, 이는 답변 품질에 앞서 사용자가 가장 먼저 체감하는 성능 지표이기 때문입니다.
 

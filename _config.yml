@@ -55,6 +55,18 @@ authors:
     avatar: 'assets/images/profiles/jyseong.jpg'
     email: jyseong@microsoft.com
     description: "SR TECHNICAL SPECIALIST"
+  seojiyoung:
+    name: seojiyoung
+    display_name: Jiyoung Seo
+    avatar: 'assets/images/profiles/seojiyoung.jpg'
+    email: seojiyoung@microsoft.com
+    description: "SR SPECIALIST - Data&AI"
+  kiyoungkim:
+    name: kiyoungkim
+    display_name: Ki Young Kim
+    avatar: 'assets/images/profiles/kiyoungkim.jpg'
+    email: kiyoungkim@microsoft.com
+    description: "Data& AI Technical Specialist at Microsoft Korea"
 
 # Plugins
 plugins:

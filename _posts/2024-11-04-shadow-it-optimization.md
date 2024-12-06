@@ -5,6 +5,7 @@ author: oskwon
 tag: [ Azure, Shadow It, Cost Saving Tips, Azurebestpractice ]
 category: [ Update ]
 image: assets/images/thumnails/1_Cxw6GhmtHcWoW1ymgAi2rQ.webp
+featured: true
 ---
 
 ![img](https://cdn-images-1.medium.com/max/1200/1*Uf3ukksWUNG4MTPHaNaQLg.png)
