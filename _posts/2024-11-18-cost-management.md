@@ -7,7 +7,6 @@ category: [ Solution ]
 image: assets/images/thumnails/duchoi-costmanagement.jpg
 
 ---
-### Azure 사용 비용 확인 하기 (Rest API)
 
 ![img](../assets/images/duchoi/cost1.jpg)
 
