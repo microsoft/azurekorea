@@ -4,7 +4,7 @@ title:  "Azure VMware Solution 가용성 디자인 고려사항"
 author: shki
 tag: [ Azure, VMware, AVS]
 category: [ Solution ]
-image: assets/images/thumnails/shki-avs.jpg
+image: assets/images/thumnails/shki-avs-design.jpg
 ---
 
 *본 글은 [Azure VMware Solution Availability Design Considerations](https://techcommunity.microsoft.com/t5/azure-migration-and/azure-vmware-solution-availability-design-considerations/ba-p/3682915) 의 많은 내용을 참고하였습니다.*

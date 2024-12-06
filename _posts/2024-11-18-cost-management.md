@@ -4,7 +4,7 @@ title:  "Azure 사용 비용 확인 하기 (Rest API)"
 author: duchoi
 tag: [Azure Cost Management, Azure Cost, REST API, FinOps]
 category: [ Solution ]
-image: assets/images/thumnails/duchoi-costmanagement.png
+image: assets/images/thumnails/duchoi-costmanagement.jpg
 
 ---
 ### Azure 사용 비용 확인 하기 (Rest API)
