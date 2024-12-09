@@ -2,7 +2,7 @@
 layout: post
 title:  "Unified Data platform Fabric 기능 (2/4): 모델링, 개발자+API, 시각화, 플랫폼"
 author: kiyoungkim
-tag: [ Azure, Azure Fabric ]
+tag: [ Azure, Microsoft Fabric ]
 category: [ Update ]
 image: assets/images/thumnails/fabric-function2.png
 ---

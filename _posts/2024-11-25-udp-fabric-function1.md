@@ -2,7 +2,7 @@
 layout: post
 title:  "Unified Data platform Fabric 기능 (1/4): 인증, 코파일럿, 리포팅"
 author: kiyoungkim
-tag: [ Azure, Azure Fabric ]
+tag: [ Azure, Microsoft Fabric ]
 category: [ Update ]
 image: assets/images/thumnails/fabric-function1.jpg
 ---

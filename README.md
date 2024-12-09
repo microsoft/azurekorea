@@ -8,7 +8,7 @@
 
 **Repository fork**
 
-1. 브라우저에서 https://github.com/microsoft/azurekorea에 접속한 뒤, 회사 계정으로 GitHub에 로그인합니다.
+1. 브라우저에서 [https://github.com/microsoft/azurekorea](https://github.com/microsoft/azurekorea)에 접속한 뒤, 회사 계정으로 GitHub에 로그인합니다.
 2. 오른쪽 상단 Fork 버튼을 클릭합니다.
     
     ![image.png](assets/images/guide/image1.png)
