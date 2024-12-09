@@ -103,6 +103,12 @@ authors:
       avatar: 'assets/images/profiles/duchoi.jpg'
       email: duchoi@microsoft.com
       description: "SR TECHNICAL SPECIALIST"
+  kyungbinoh:
+    name: kyungbinoh
+    display_name: kyungbin Oh
+    avatar: 'assets/images/profiles/kyungbinoh.jpg'
+    email: kyungbinoh@microsoft.com
+    description: "Microsoft Azure Infra Specialist"
 
 # Plugins
 plugins:
