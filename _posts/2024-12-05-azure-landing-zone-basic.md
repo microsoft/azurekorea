@@ -75,8 +75,7 @@ Azure Landing Zone은 플랫폼으로써의 역할을 다 할 수 있어야 하�
     1.  Governance 항목 설계시 대개 많은 시간이 소요됩니다. Azure Policy를 통해 거버넌스를 설계하기 때문인데요, 온프렘 환경과 달리 클라우드 환경에서는 모든 액션을 막고 승인 결재를 통해 환경을 설정하기 보다, 어느 정도 유연성은 제공하면서 보안이나 운영상의 이유로 허용되지 않는 액션은 금지하는 가드레일 정책을 가져가도록 설정하실 수 있습니다.
     2.  명확한 요구사항이 있다면 요구사항에 맞춰 Azure Policy를 적용하실 수 있고, 요구사항이 없을 경우 Azure 포털에서 Policy initiative를 확인하시면 ISO 27001을 참고하실 수 있습니다. 물론 ISO 27001 내에도 정말 많은 수의 Azure Policy가 포함돼 있지만 처음부터 설계를 해야 하는 입장이라면 참고하실 수 있는 좋은 리소스입니다.
 8.  ![img](../assets/images/yorha/monitoring.png)
-9.  
-10. Platform automation and DevOps
+9.  Platform automation and DevOps
     1.  애플리케이션 배포 및 관리를 자동화하기 위해 지속적 통합 및 지속적 배포(Continuous Integration and Continuous Deployment, CI/CD) 파이프라인을 구축합니다. Azure DevOps, GitHub Actions 또는 기타 도구를 사용하여 이 과정을 자동화합니다.
     2.  인프라를 코드로 관리(Infrastructure as Code, IaC)하기 위해 Azure Resource Manager 템플릿, Terraform, Ansible 등을 사용하여 인프라 배포와 구성을 자동화합니다. 이를 통해 일관성 있는 환경을 유지하고, 반복 가능한 배포를 가능하게 합니다.
     3.  애플리케이션 및 인프라의 상태를 지속적으로 모니터링하고 로그를 수집하기 위해 Azure Monitor, Azure Log Analytics, Application Insights 등을 설정합니다. 이를 통해 문제를 신속하게 감지하고 대응할 수 있습니다.
