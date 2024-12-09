@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Argo CD 설치하기"
+title:  "VS Code를 활용하여 Azure API 호출하기"
 author: kyungbinoh
 tag: [ Azure, Azure API ]
 category: [ Solution ]
