@@ -4,7 +4,7 @@ title:  "Dev 컨테이너에서 Azurite 실행하기"
 author: jyseong
 tag: [ Azurite, Dev Container ]
 category: [ Solution ]
-image: assets/images/jyseong/images/azurite.png
+image: assets/images/jyseong/azurite.png
 ---
 
 ### 작성자 : [Pamela_Fox](https://techcommunity.microsoft.com/users/pamela_fox/1604078)

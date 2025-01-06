@@ -4,7 +4,7 @@ title:  "Azure Kubernetes Service v1.31에서 Azure Linux 3.0 미리 보기로 �
 author: jyseong
 tag: [ Azure Linux, Azure Kubernetes Service ]
 category: [ Solution ]
-image: assets/images/jyseong/images/final-demo.jpg
+image: assets/images/jyseong/final-demo.gif
 ---
 
 ### 작성자 : [FloraTaagen](https://techcommunity.microsoft.com/users/florataagen/2623154)
@@ -38,7 +38,7 @@ az feature register --namespace Microsoft.ContainerService --name AzureLinuxV3Pr
 az feature show --namespace Microsoft.ContainerService --name AzureLinuxV3Preview
 ```
 
-![](../assets/images/jyseong/images/final-demo.jpg)
+![](../assets/images/jyseong/final-demo.gif)
 
 등록이 완료되면, '--os-sku=AzureLinux' 옵션으로 생성된 AKS 버전 1.31 클러스터 또는 노드 풀은 Azure Linux 3.0을 기본적으로 사용하게 됩니다.
 
