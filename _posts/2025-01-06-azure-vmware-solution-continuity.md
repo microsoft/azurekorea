@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Azure VMware Solution 가용성 디자인 고려사항"
+title:  "Azure VMware Solution 비즈니스 연속성 디자인 고려사항"
 author: shki
 tag: [ Azure, VMware, AVS]
 category: [ Solution ]
