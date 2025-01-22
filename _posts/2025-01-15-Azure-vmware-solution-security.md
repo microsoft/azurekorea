@@ -46,7 +46,7 @@ image: assets/images/thumnails/shki-avs-security.png
 
 각 서비스의 보안 요구 사항에 따라 인프라 설계는 다양한 보안 정책을 비용 효율적으로 충족하는 데 사용되는 기술을 혼합하여 구성할 수 있습니다.
 
-![img](../assets/images/shki/4-01jpg)
+![img](../assets/images/shki/4-01.jpg)
 
 그림 1 – 일반적인 레거시 비즈니스 크리티컬 애플리케이션 아키텍처
 
@@ -57,7 +57,7 @@ image: assets/images/thumnails/shki-avs-security.png
 
 아래 다이어그램은 AVS의 아키텍처 구성 요소를 보여줍니다.
 
-![img](../assets/images/shki/4-02jpg)
+![img](../assets/images/shki/4-02.jpg)
 
 그림 2 – AVS 아키텍처 구성요소
 
