@@ -109,6 +109,12 @@ authors:
     avatar: 'assets/images/profiles/kyungbinoh.jpg'
     email: kyungbinoh@microsoft.com
     description: "Microsoft Azure Infra Specialist"
+  t-suzyvaque:
+    name: t-suzyvaque
+    display_name: Suzy Vaque
+    avatar: 'assets/images/profiles/suzyvaque.jpg'
+    email: t-suzyvaque@microsoft.com
+    description: "Data&AI Technical Specialist Intern"
 
 # Plugins
 plugins:
