@@ -54,7 +54,9 @@ RAG는 여러 시나리오로 구현 및 활용될 수 있습니다. 본 블로�
 3. **.env 파일**: 앞서 배포한 리소스의 Endpoint와 API Key 정보를 작성해야 합니다. 노트북 내의 셀을 실행해 작성 가능합니다.
 4. **Jupyter Notebook**: 코드 테스트는 Azure Machine Learning Notebook을 기준으로 합니다.
 5. **Python**: 코드 테스트는 3.10.11 버전을 기준으로 합니다.
-
+ 
+&#160;
+ 
 ## 0️⃣ 트래픽 관리를 위한 준비 (Azure API Management)
 
 *APIM 배포 및 Policy 설정을 위한 레퍼런스 ([APIM Manual Setup](https://github.com/azure-samples/openai-apim-lb/blob/main/docs/manual-setup.md))*
@@ -82,7 +84,9 @@ Azure의 PaaS형 리소스를 배포하면 해당 리소스를 호출할 수 있
 
     - **GPT-4o 모델을 East US와 East US 2에 각각 1개씩 배포** → East US의 Quota가 초과되어 Chat Completion 요청이 실패하면, APIM을 통해 자동으로 East US 2의 Quota를 사용하도록 Retry 가능
     - **Text-Embedding-Ada-002 모델을 East US와 East US 2에 각각 1개씩 배포** → 특정 Region에서 Embedding 요청이 과부하되면 다른 Region의 리소스를 활용 가능
-
+ 
+&#160;
+ 
 2. Deployment Name
     
     
@@ -93,16 +97,24 @@ Azure의 PaaS형 리소스를 배포하면 해당 리소스를 호출할 수 있
     
     이러한 설정을 통해 APIM에서 모델을 Region에 따라 자동으로 호출할 수 있어, 트래픽 관리가 더욱 원활해집니다.
     
-
+ 
+&#160;
+ 
 ### Step 2. APIM 권한 부여: RBAC
 
 APIM은 Response Code나 Traffic에 따라 여러 Backend를 호출하기 때문에, 각 Backend에 접근할 수 있는 권한이 필요합니다. 예를 들어, APIM의 Managed Indentity에 직접 Role을 지정하고 RBAC(Role Based Access Control) 기반 인증을 하는 방법이 존재합니다.
-
+ 
+&#160;
+ 
 1. Azure API Management 리소스를 생성할 때, Managed Identity의 Status를 체크합니다.
 ![Managed Identity](../assets/images/t-suzyvaque/image(1).png)
-
+ 
+&#160;
+ 
 2. 앞서 배포한 Azure OpenAI 리소스에 대한 APIM의 접근 권한을 부여하기 위해, 각 Azure OpenAI 리소스마다 다음 과정을 수행합니다.
     
+        
+    &#160;
     
     2-1. Azure OpenAI 리소스의 IAM 접속
     
@@ -116,26 +128,36 @@ APIM은 Response Code나 Traffic에 따라 여러 Backend를 호출하기 때문
     
     ![Assign Access to Managed Identity](../assets/images/t-suzyvaque/image(4).png)
     
-
+ 
+&#160;
+ 
 ### Step 3. (Optional) APIM 권한 부여: Key Authentication
 
 앞서 사용한 RBAC을 통한 권한 부여 방식 외에도, 사용하는 Azure OpenAI의 API Key를 등록하는 방법도 존재합니다. 앞선 단계를 수행했다면 현 단계는 생략해도 괜찮습니다.
-
+ 
+&#160;
+ 
 1. APIM 리소스에서 **Named Values**를 추가합니다.
     
     ![Add Named Values](../assets/images/t-suzyvaque/image(5).png)
     
     보안 상, **Key Vault에 Azure OpenAI의 API Key를 등록**해두고, Key Vault 타입으로 Named Values를 추가하는 방법이 권장됩니다. 사용할 Azure OpenAI API마다 아래의 과정을 반복해야 합니다.
+        
+    &#160;
     
     1-1. Key Vault에 Azure OpenAI의 API Key를 등록합니다.
     
     ![Generate Secret in Key Vaults](../assets/images/t-suzyvaque/image(6).png)
     
     ![Create a Secret](../assets/images/t-suzyvaque/image(7).png)
+        
+    &#160;
     
     1-2. APIM에 Named Value를 Key Vault 타입으로 지정해, 앞서 설정한 Secret을 선택합니다.
     
     ![Add Named Value](../assets/images/t-suzyvaque/image(8).png)
+     
+    &#160;
     
 2. APIM 리소스에서 Backends를 추가합니다.
     
@@ -146,14 +168,18 @@ APIM은 Response Code나 Traffic에 따라 여러 Backend를 호출하기 때문
     
     ![Configure](../assets/images/t-suzyvaque/image(10).png)
     
-
+ 
+&#160;
+ 
 ### Step 4. APIM OpenAPI 등록 및 Inbound Policy 설정
 
 1. Azure OpenAI 버전에 맞는 *inference.json 파일 ([Rest API Specs for Azure OpenAI](https://github.com/Azure/azure-rest-api-specs/tree/main/specification/cognitiveservices/data-plane/AzureOpenAI/inference))*을 찾아 다운로드합니다.
     
     
 2. 다운로드받은 inference.json 파일의 Default Endpoint를 자신이 사용할 Endpoint로 업데이트합니다.
-    
+        
+        
+    &#160;
     
 3. APIM 리소스에서 APIs를 선택해 Azure OpenAPI를 생성합니다.
     
@@ -164,6 +190,8 @@ APIM은 Response Code나 Traffic에 따라 여러 Backend를 호출하기 때문
     3-2. API URL의 suffix로 openai 를 반드시 입력해야 합니다.
     
     ![Configure](../assets/images/t-suzyvaque/image(12).png)
+     
+    &#160;
     
 4. Design Tab을 선택해 Inbound Processing Policy를 수정합니다.
     
@@ -173,13 +201,17 @@ APIM은 Response Code나 Traffic에 따라 여러 Backend를 호출하기 때문
     
     ![Inbound Processing Policy](../assets/images/t-suzyvaque/image(14).png)
     
-    **만약 앞선 권한 부여의 단계에서 Step 2의 RBAC을 위한 설정 대신 Step 3의 Key Authentication을 위한 설정을 완료했다면, Step 3에서 APIM에 등록해둔 Backend ID를 사용하도록 로직을 업데이트해야 합니다. (e.g., Azure OpenAI의 Endpoint 전체를 지정하는 대신 <set-backend-service backend-id="your backend name of Azure OpenAI" />)*
+    **만약 앞선 권한 부여의 단계에서 Step 2의 RBAC을 위한 설정 대신 Step 3의 Key Authentication을 위한 설정을 완료했다면, Step 3에서 APIM에 등록해둔 Backend ID를 사용하도록 로직을 업데이트해야 합니다. (e.g., Azure OpenAI의 Endpoint 전체를 지정하는 대신 \<set-backend-service backend-id="your backend name of Azure OpenAI" /> 와 같이 설정)*
+     
+    &#160;
     
 5. APIM Subscription을 생성해 API로 앞선 단계에서 생성한 Azure OpenAPI를 선택합니다.
     
     ![Create Subscription](../assets/images/t-suzyvaque/image(15).png)
     
-
+ 
+&#160;
+ 
 ### Step 5. APIM Test
 
 *APIM 테스트 ([APIM_Test.ipynb](https://github.com/suzyvaque/microsoft-azure-tutorials/blob/main/RAG-SQLDB-Resumes/APIM_Test.ipynb))* 수행 후 로그를 확인해보면, 실행 도중 Backend URL이 변경되는 현상을 확인할 수 있습니다.
@@ -187,7 +219,9 @@ APIM은 Response Code나 Traffic에 따라 여러 Backend를 호출하기 때문
 디폴트 Backend에서 HTTP 429(Too Many Requests) 등의 오류 코드가 리턴될 경우, APIM이 자동으로 예비 Backend로 요청을 재전달하고, 예비 Backend에서 요청이 정상적으로 처리되면 최종적으로 HTTP 200(Success)이 리턴된 것입니다. 이러한 Failover 메커니즘을 통해 Quota 초과로 인한 요청 실패를 최소화할 수 있습니다.
 
 ![KQL Log](../assets/images/t-suzyvaque/image(16).png)
-
+ 
+&#160;
+ 
 ## 1️⃣ Sample Data 생성 (Azure OpenAI)
 
 Sample Data를 직접 생성하기 위해 Azure OpenAI의 Chat Completion 모델을 사용할 수 있습니다.
@@ -209,7 +243,9 @@ Sample Data 생성을 위해서는 별도의 쿼리 없이 시스템 역할만�
 ![Add Prompt](../assets/images/t-suzyvaque/image(18).png)
 
 받은 답변은 reportlab 라이브러리를 사용해 PDF 형식으로 변환 후 저장합니다.
-
+ 
+&#160;
+ 
 ## 2️⃣ 텍스트 추출 & Chunking (Azure Document Intelligence)
 
 **Azure AI Services의 Document Intelligence**를 이용해 PDF에서 텍스트를 추출할 수 있습니다.
@@ -247,7 +283,9 @@ Document Intelligence는 여러 ***prebuilt 모델** ([Prebuilt Models in Azure 
 ***+Chunking을 하면서도 기존의 의미 유지를 보장하고 싶다면?***
 
 Document Intelligence도 자체적인 Chunking 기능을 제공하는데, 이는 의미 정보를 고려한 *Semantic Chunking ([Azure Document Intelligence Supported Chunking](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept/retrieval-augmented-generation?view=doc-intel-4.0.0#introduction))*이기 때문에, 텍스트를 분할하면서도 기존 맥락을 최대한 유지할 수 있다는 장점이 있습니다. 의미 관계의 정확한 분석이 중요한 작업을 수행할 때에는 **Document Intelligence의 Semantic Chunking**을 사용할 수 있을 것입니다.
-
+ 
+&#160;
+ 
 ## 3️⃣ Embedding (Azure OpenAI)
 
 이제 추출된 텍스트를 처리 가능한 숫자(**Vector**)로 변환해야 합니다. 기존의 의미 관계를 반영해 텍스트를 Vector로 변환하는 이 작업을 **Embedding**이라 합니다. Embedding을 수행하기 위해 **Azure OpenAI의 Embedding 모델**을 사용할 수 있습니다.
@@ -267,7 +305,9 @@ APIM에 저장된 Backend Endpoint를 사용해 Embedding 모델을 호출할 �
 ![Vector Embedding](../assets/images/t-suzyvaque/image(25).png)
 
 ![Embedded Results](../assets/images/t-suzyvaque/image(26).png)
-
+ 
+&#160;
+ 
 ## 4️⃣ Vector 저장 & 검색 (Azure SQL Database)
 
 Azure SQL Database는 ***Vector 데이터 타입** ([Azure SQL DB Supported Vectors](https://learn.microsoft.com/en-us/sql/relational-databases/vectors/vectors-sql-server?view=azuresqldb-current))*을 지원하며, Vector 데이터를 다루기 위한 여러 ***빌트인 Vector 연산 함수**([Azure SQL Server Vector Functions](https://learn.microsoft.com/en-us/sql/t-sql/functions/vector-functions-transact-sql?view=azuresqldb-current))*를 제공합니다. 예를 들어, VECTOR_DISTANCE 함수를 사용하면 두 Vector 간 코사인 유사도를 계산하고 쿼리와 가장 관련성이 높은 데이터를 찾을 수 있습니다.
@@ -310,7 +350,9 @@ Embedding된 데이터를 **Azure SQL Database**에 Vector 형식으로 저장�
 검색어가 주어지면 Azure SQL Database에 **저장된 Vector와 코사인 유사도를 계산**하고, 유사도가 높은 결과를 반환하는 함수를 정의합니다. 이 함수는 RAG의 핵심으로, **답변 보강(Augmentation)**을 위한 검색을 수행하는 방법이 됩니다.
 
 ![Vector Search](../assets/images/t-suzyvaque/image(29).png)
-
+ 
+&#160;
+ 
 ## 5️⃣ 답변 생성 (Azure OpenAI)
 
 ### Step 1. Azure OpenAI Client 설정
@@ -334,7 +376,9 @@ APIM에 저장된 Backend Endpoint를 사용해 Chat Completion 모델을 호출
 특정 검색어에 대해 얻은 답변을 확인해보면, Vector Search를 통해 얻은 지원자 정보와 함께, Chat Completion 모델이 추천 이유, 코멘트, 인터뷰 팁 등을 추가로 생성해 응답을 제공합니다.
 
 ![Check Results](../assets/images/t-suzyvaque/image(33).png)
-
+ 
+&#160;
+ 
 ## Wrap-Up
 
 이번 블로그에서는 Azure의 서비스를 사용해 Smart Resume Matching을 구현하는 과정을 살펴봤습니다.
