@@ -29,7 +29,7 @@ RAG는 여러 시나리오로 구현 및 활용될 수 있습니다. 본 블로�
 
 기업의 채용 과정에서는 수많은 지원자 중 적합한 후보를 찾는 데 많은 시간과 비용이 소요됩니다. 이를 해결하기 위해 Microsoft를 비롯한 여러 기업들은 **AI 기반 Smart Resume Matching** 시스템을 도입하고 있습니다. 이는 AI가 지원서의 내용을 분석하고, 요구 사항과의 유사도를 평가하여 적합한 지원자를 추천하는 방식입니다.
 
-본 글은 *Microsoft Dev Blog의 Smart Resume Matching ([Document RAG with Azure SQL DB & Document Intelligence](https://devblogs.microsoft.com/azure-sql/smart-resume-matching-with-azure-sql-db-document-intelligence/))*을 기반으로, **Azure SQL Database를 활용한 RAG**를 다룹니다. 또한 기존의 내용에 더해, **Azure OpenAI를 사용해 Sample Data**를 준비하는 과정과 **API Management를 통한 트래픽 관리** 방법까지 함께 살펴보겠습니다.
+본 글은 *Microsoft Dev Blog의 Smart Resume Matching* (*[Document RAG with Azure SQL DB & Document Intelligence](https://devblogs.microsoft.com/azure-sql/smart-resume-matching-with-azure-sql-db-document-intelligence/)*)을 기반으로, **Azure SQL Database를 활용한 RAG**를 다룹니다. 또한 기존의 내용에 더해, **Azure OpenAI를 사용해 Sample Data**를 준비하는 과정과 **API Management를 통한 트래픽 관리** 방법까지 함께 살펴보겠습니다.
  
 &#160;
  
@@ -44,7 +44,7 @@ RAG는 여러 시나리오로 구현 및 활용될 수 있습니다. 본 블로�
 5. Vector 저장 및 Similarity 검색 (Azure SQL Database)
 6. RAG 기반 답변 생성 (Azure OpenAI)
 
-사용한 전체 코드는 *RAG_with_Resumes.ipynb ([RAG with Resumes Jupyter Notebook](https://github.com/suzyvaque/microsoft-azure-tutorials/blob/main/RAG-SQLDB-Resumes/RAG_with_Resumes.ipynb))*에서 확인 가능하며, 실행 시에는 *레포지터리 ([Repo for RAG SQLDB Resumes](https://github.com/suzyvaque/microsoft-azure-tutorials/tree/main/RAG-SQLDB-Resumes))* 전체를 Clone하는 방법이 편리합니다.
+사용한 전체 코드는 *RAG_with_Resumes.ipynb* (*[RAG with Resumes Jupyter Notebook](https://github.com/suzyvaque/microsoft-azure-tutorials/blob/main/RAG-SQLDB-Resumes/RAG_with_Resumes.ipynb)*)에서 확인 가능하며, 실행 시에는 *레포지터리 ([Repo for RAG SQLDB Resumes](https://github.com/suzyvaque/microsoft-azure-tutorials/tree/main/RAG-SQLDB-Resumes))* 전체를 Clone하는 방법이 편리합니다.
  
 &#160;
  
@@ -73,7 +73,7 @@ RAG는 여러 시나리오로 구현 및 활용될 수 있습니다. 본 블로�
 
 Azure의 PaaS형 리소스를 배포하면 해당 리소스를 호출할 수 있는 Endpoint가 생성됩니다. 이때 각 리소스의 사용 Quota가 설정되어 있어, 초과 호출 시 **HTTP 429 (Too Many Requests) 오류**가 발생할 수 있습니다.
 
-예를 들어 Azure OpenAI는 **TPM(Tokens Per Minute)**이 제한되어 있습니다. 따라서 Azure OpenAI API를 짧은 시간 내에 반복적으로 호출한다면, 허용된 토큰 사용량을 초과해 HTTP 429 오류가 발생해 원하는 결과를 얻지 못할 가능성이 있습니다.
+예를 들어 Azure OpenAI는 **TPM** (Tokens Per Minute)이 제한되어 있습니다. 따라서 Azure OpenAI API를 짧은 시간 내에 반복적으로 호출한다면, 허용된 토큰 사용량을 초과해 HTTP 429 오류가 발생해 원하는 결과를 얻지 못할 가능성이 있습니다.
 
 이를 해결하기 위해 Azure API Management(APIM)를 활용할 수 있습니다. APIM에 Policy를 등록하면, 특정 리소스를 통한 요청 처리 실패 시 다른 리소스로 요청 대상을 전환하는 Failover, 트래픽을 여러 인스턴스에 분산하는 Load Balancing을 수행할 수 있습니다. 이를 통해 **RAG 파이프라인에서 API 호출 안정성을 향상하고 일정한 성능을 유지**할 수 있습니다.
  
@@ -81,7 +81,7 @@ Azure의 PaaS형 리소스를 배포하면 해당 리소스를 호출할 수 있
  
 ### Step 1. APIM 사용을 위한 Azure OpenAI 모델 배포
 
-모델 배포의 절차는 *가이드 ([Azure AI Foundry에서 Azure OpenAI 모델 배포](https://learn.microsoft.com/ko-kr/azure/ai-studio/how-to/deploy-models-openai#deploy-an-azure-openai-model-from-your-project))*에서 확인할 수 있습니다. 이때 APIM 사용을 위해서는 모델의 Location과 Deployment Name에 주의해야 합니다.
+모델 배포의 절차는 *가이드* (*[Azure AI Foundry에서 Azure OpenAI 모델 배포](https://learn.microsoft.com/ko-kr/azure/ai-studio/how-to/deploy-models-openai#deploy-an-azure-openai-model-from-your-project)*)에서 확인할 수 있습니다. 이때 APIM 사용을 위해서는 모델의 Location과 Deployment Name에 주의해야 합니다.
 
 1. Resource Location
     
@@ -114,16 +114,16 @@ Azure의 PaaS형 리소스를 배포하면 해당 리소스를 호출할 수 있
  
 ### Step 2. APIM 권한 부여: RBAC
 
-APIM은 Response Code나 Traffic에 따라 여러 Backend를 호출하기 때문에, 각 Backend에 접근할 수 있는 권한이 필요합니다. 예를 들어, APIM의 Managed Indentity에 직접 Role을 지정하고 RBAC(Role Based Access Control) 기반 인증을 하는 방법이 존재합니다.
+APIM은 Response Code나 Traffic에 따라 여러 Backend를 호출하기 때문에, 각 Backend에 접근할 수 있는 권한이 필요합니다. 예를 들어, APIM의 Managed Indentity에 직접 Role을 지정하고 **RBAC(Role Based Access Control)** 기반 인증을 하는 방법이 존재합니다.
  
 &#160;
  
-1. Azure API Management 리소스를 생성할 때, Managed Identity의 Status를 체크합니다.
+1. Azure API Management 리소스를 생성할 때, **Managed Identity**의 Status를 체크합니다.
 ![Managed Identity](../assets/images/t-suzyvaque/image(1).png)
  
 &#160;
  
-2. 앞서 배포한 Azure OpenAI 리소스에 대한 APIM의 접근 권한을 부여하기 위해, 각 Azure OpenAI 리소스마다 다음 과정을 수행합니다.
+2. 앞서 배포한 Azure OpenAI 리소스에 대한 APIM의 접근 권한을 부여하기 위해, **각 Azure OpenAI 리소스마다** 다음 과정을 수행합니다.
     
         
     &#160;
@@ -180,7 +180,7 @@ APIM은 Response Code나 Traffic에 따라 여러 Backend를 호출하기 때문
      
     &#160;
     
-    Runtime URL은 Backend URL에 /openai 를 Suffix로 추가한 형태여야 합니다. Header에는 Named Values에 등록해둔 Key를 선택합니다.
+    Runtime URL은 Backend URL에 **/openai 를 Suffix로 추가**한 형태여야 합니다. Header에는 Named Values에 등록해둔 Key를 선택합니다.
     
     ![Configure](../assets/images/t-suzyvaque/image(10).png)
     
@@ -191,7 +191,7 @@ APIM은 Response Code나 Traffic에 따라 여러 Backend를 호출하기 때문
  
 &#160;
  
-1. Azure OpenAI 버전에 맞는 *inference.json 파일 ([Rest API Specs for Azure OpenAI](https://github.com/Azure/azure-rest-api-specs/tree/main/specification/cognitiveservices/data-plane/AzureOpenAI/inference))*을 찾아 다운로드합니다.
+1. Azure OpenAI 버전에 맞는 *inference.json 파일* (*[Rest API Specs for Azure OpenAI](https://github.com/Azure/azure-rest-api-specs/tree/main/specification/cognitiveservices/data-plane/AzureOpenAI/inference)*)을 찾아 다운로드합니다.
     
      
     &#160;
@@ -211,19 +211,19 @@ APIM은 Response Code나 Traffic에 따라 여러 Backend를 호출하기 때문
      
     &#160;
     
-    3-2. API URL의 suffix로 openai 를 반드시 입력해야 합니다.
+    3-2. API URL의 **suffix로 openai**를 반드시 입력해야 합니다.
     
     ![Configure](../assets/images/t-suzyvaque/image(12).png)
      
     &#160;
     
-4. Design Tab을 선택해 Inbound Processing Policy를 수정합니다.
+4. Design Tab을 선택해 **Inbound Processing Policy**를 수정합니다.
     
     ![Update Inbound Processing Policy](../assets/images/t-suzyvaque/image(13).png)
      
     &#160;
     
-    Policy로 사용할 수 있는 *XML 파일 ([Azure OpenAI APIM Policy](https://github.com/Azure-Samples/openai-apim-lb/blob/main/apim-policy.xml))*에서 추가되는 Backend URL과 Priority를 수정해 Inbound Processing Policy로 사용합니다.
+    Policy로 사용할 수 있는 *XML 파일* (*[Azure OpenAI APIM Policy](https://github.com/Azure-Samples/openai-apim-lb/blob/main/apim-policy.xml)*)에서 추가되는 Backend URL과 Priority를 수정해 Inbound Processing Policy로 사용합니다.
     
     ![Inbound Processing Policy](../assets/images/t-suzyvaque/image(14).png)
     
@@ -242,7 +242,7 @@ APIM은 Response Code나 Traffic에 따라 여러 Backend를 호출하기 때문
 
 *APIM 테스트 ([APIM_Test.ipynb](https://github.com/suzyvaque/microsoft-azure-tutorials/blob/main/RAG-SQLDB-Resumes/APIM_Test.ipynb))* 수행 후 로그를 확인해보면, 실행 도중 Backend URL이 변경되는 현상을 확인할 수 있습니다.
 
-디폴트 Backend에서 HTTP 429(Too Many Requests) 등의 오류 코드가 리턴될 경우, APIM이 자동으로 예비 Backend로 요청을 재전달하고, 예비 Backend에서 요청이 정상적으로 처리되면 최종적으로 HTTP 200(Success)이 리턴된 것입니다. 이러한 Failover 메커니즘을 통해 Quota 초과로 인한 요청 실패를 최소화할 수 있습니다.
+디폴트 Backend에서 HTTP 429(Too Many Requests) 등의 오류 코드가 리턴될 경우, APIM이 자동으로 예비 Backend로 요청을 재전달하고, 예비 Backend에서 요청이 정상적으로 처리되면 최종적으로 HTTP 200(Success)이 리턴된 것입니다. 이러한 **Failover 메커니즘을 통해 Quota 초과로 인한 요청 실패를 최소화**할 수 있습니다.
 
 ![KQL Log](../assets/images/t-suzyvaque/image(16).png)
  
@@ -300,7 +300,7 @@ Sample Data 생성을 위해서는 별도의 쿼리 없이 시스템 역할만�
  
 ### Step 2. Model 선택 및 텍스트 추출
 
-Document Intelligence는 여러 ***prebuilt 모델** ([Prebuilt Models in Azure Document Intelligence](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0#models-and-development-options))*을 제공하기 때문에 직접 모델을 훈련시킬 필요 없이, 모델 종류를 선택해 바로 텍스트 분석을 시작할 수 있습니다.
+Document Intelligence는 여러 ***prebuilt 모델*** (*[Prebuilt Models in Azure Document Intelligence](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0#models-and-development-options)*)을 제공하기 때문에 직접 모델을 훈련시킬 필요 없이, 모델 종류를 선택해 바로 텍스트 분석을 시작할 수 있습니다.
 
 그 중 **prebuilt-layout 모델**을 사용해 이력서를 읽을 것입니다. prebuilt-layout 모델은 텍스트와 레이아웃 정보를 함께 읽는 데에 적합합니다.
 
@@ -324,7 +324,7 @@ Document Intelligence는 여러 ***prebuilt 모델** ([Prebuilt Models in Azure 
 
 ***+Chunking을 하면서도 기존의 의미 유지를 보장하고 싶다면?***
 
-Document Intelligence도 자체적인 Chunking 기능을 제공하는데, 이는 의미 정보를 고려한 *Semantic Chunking ([Azure Document Intelligence Supported Chunking](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept/retrieval-augmented-generation?view=doc-intel-4.0.0#introduction))*이기 때문에, 텍스트를 분할하면서도 기존 맥락을 최대한 유지할 수 있다는 장점이 있습니다. 의미 관계의 정확한 분석이 중요한 작업을 수행할 때에는 **Document Intelligence의 Semantic Chunking**을 사용할 수 있을 것입니다.
+Document Intelligence도 자체적인 Chunking 기능을 제공하는데, 이는 의미 정보를 고려한 *Semantic Chunking* (*[Azure Document Intelligence Supported Chunking](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept/retrieval-augmented-generation?view=doc-intel-4.0.0#introduction)*)이기 때문에, 텍스트를 분할하면서도 기존 맥락을 최대한 유지할 수 있다는 장점이 있습니다. 의미 관계의 정확한 분석이 중요한 작업을 수행할 때에는 **Document Intelligence의 Semantic Chunking**을 사용할 수 있을 것입니다.
  
 &#160;
   
@@ -360,7 +360,7 @@ APIM에 저장된 Backend Endpoint를 사용해 Embedding 모델을 호출할 �
  
 ## 4️⃣ Vector 저장 & 검색 (Azure SQL Database)
 
-Azure SQL Database는 ***Vector 데이터 타입** ([Azure SQL DB Supported Vectors](https://learn.microsoft.com/en-us/sql/relational-databases/vectors/vectors-sql-server?view=azuresqldb-current))*을 지원하며, Vector 데이터를 다루기 위한 여러 ***빌트인 Vector 연산 함수**([Azure SQL Server Vector Functions](https://learn.microsoft.com/en-us/sql/t-sql/functions/vector-functions-transact-sql?view=azuresqldb-current))*를 제공합니다. 예를 들어, VECTOR_DISTANCE 함수를 사용하면 두 Vector 간 코사인 유사도를 계산하고 쿼리와 가장 관련성이 높은 데이터를 찾을 수 있습니다.
+Azure SQL Database는 ***Vector 데이터 타입*** (*[Azure SQL DB Supported Vectors](https://learn.microsoft.com/en-us/sql/relational-databases/vectors/vectors-sql-server?view=azuresqldb-current)*)을 지원하며, Vector 데이터를 다루기 위한 여러 ***빌트인 Vector 연산 함수*** (*[Azure SQL Server Vector Functions](https://learn.microsoft.com/en-us/sql/t-sql/functions/vector-functions-transact-sql?view=azuresqldb-current)*)를 제공합니다. 예를 들어, VECTOR_DISTANCE 함수를 사용하면 두 Vector 간 코사인 유사도를 계산하고 쿼리와 가장 관련성이 높은 데이터를 찾을 수 있습니다.
  
 &#160;
  
@@ -383,7 +383,7 @@ odbcinst -q -d
 # should now see ODBC Driver 17 for SQL Server
 ```
 
-혹은 *Azure SQL Server Management Studio(SSMS) ([SSMS 다운로드](https://learn.microsoft.com/ko-kr/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16))*를 사용하는 방법도 존재합니다.
+혹은 *Azure SQL Server Management Studio* (*[SSMS 다운로드](https://learn.microsoft.com/ko-kr/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)*)를 사용하는 방법도 존재합니다.
  
 &#160;
  
@@ -405,7 +405,7 @@ Embedding된 데이터를 **Azure SQL Database**에 Vector 형식으로 저장�
  
 ### Step 3. Vector Search 준비
 
-검색어가 주어지면 Azure SQL Database에 **저장된 Vector와 코사인 유사도를 계산**하고, 유사도가 높은 결과를 반환하는 함수를 정의합니다. 이 함수는 RAG의 핵심으로, **답변 보강(Augmentation)**을 위한 검색을 수행하는 방법이 됩니다.
+검색어가 주어지면 Azure SQL Database에 **저장된 Vector와 코사인 유사도를 계산**하고, 유사도가 높은 결과를 반환하는 함수를 정의합니다. 이 함수는 RAG의 핵심으로, **답변 보강**(Augmentation)을 위한 검색을 수행하는 방법이 됩니다.
 
 ![Vector Search](../assets/images/t-suzyvaque/image(29).png)
  
