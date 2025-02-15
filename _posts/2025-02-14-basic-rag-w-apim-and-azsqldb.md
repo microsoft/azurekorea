@@ -430,7 +430,9 @@ APIM에 저장된 Backend Endpoint를 사용해 Chat Completion 모델을 호출
 앞서 정의한 Vector Search 함수를 이용해 검색어와 유사도가 높은 결과를 가져옵니다.
 
 ![Search](../assets/images/t-suzyvaque/image(31).png)
-
+ 
+&#160;
+ 
 모델 호출 시 검색된 데이터를 함께 전달해, 보다 정확한 답변이 생성되도록 합니다.
 
 ![RAG](../assets/images/t-suzyvaque/image(32).png)
