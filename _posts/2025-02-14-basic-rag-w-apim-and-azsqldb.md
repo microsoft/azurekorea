@@ -5,6 +5,7 @@ author: t-suzyvaque
 tag: [APIM, Azure OpenAI, Azure Document Intelligence, RAG, Azure SQL Database, Vector Search]
 category: [Solution]
 image: assets/images/thumnails/suzy_basic_rag.png
+featured: true
 ---
  
 ## Overview
