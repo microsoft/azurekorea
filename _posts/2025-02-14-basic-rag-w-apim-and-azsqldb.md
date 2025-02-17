@@ -6,10 +6,6 @@ tag: [APIM, Azure OpenAI, Azure Document Intelligence, RAG, Azure SQL Database, 
 category: [Solution]
 image: assets/images/thumnails/suzy_basic_rag.png
 ---
-
-# RAG 기본 파이프라인 구현: Smart Resume Matching with Azure SQL Database
- 
-&#160;
  
 ## Overview
  
