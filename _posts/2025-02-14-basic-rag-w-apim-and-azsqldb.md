@@ -7,6 +7,21 @@ category: [Solution]
 image: assets/images/thumnails/suzy_basic_rag.png
 featured: true
 ---
+
+본 블로그는 Azure의 서비스를 사용해 Smart Resume Matching을 구현하는 과정을 다룹니다.
+
+- Azure APIM을 통한 파이프라인 실행 안정성 강화
+- Azure Document Intelligence로 이력서 텍스트 추출
+- Azure OpenAI로 Vector 변환
+- Azure SQL Database에 Vector 저장
+- Azure SQL Database의 빌트인 Vector 연산을 통한 Vector Search 수행
+- Azure OpenAI로 Vector Search 기반 최종 지원자 추천
+
+위의 과정을 통해 기본 RAG 파이프라인을 구축할 것입니다.
+ 
+&#160;
+  
+&#160;
  
 ## Overview
  
@@ -50,7 +65,7 @@ RAG는 여러 시나리오로 구현 및 활용될 수 있습니다. 본 블로�
 1. **Azure Subscription**
 2. **Azure Resources**: 배포해야 하는 리소스 목록은 다음과 같습니다.
 
-    i. ***Azure OpenAI** ([Azure OpenAI 리소스 만들기](https://learn.microsoft.com/ko-kr/azure/ai-services/openai/how-to/create-resource?pivots=web-portal))* — **Chat Completion** 모델과 **Embedding** 모델이 필요하며, ****APIM 사용을 위해 **각 모델을 최소 2개 이상의 Region에 동일한 이름으로 배포**해야 합니다.
+    i. ***Azure OpenAI*** ([*Azure OpenAI 리소스 만들기*](https://learn.microsoft.com/ko-kr/azure/ai-services/openai/how-to/create-resource?pivots=web-portal)) — **Chat Completion** 모델과 **Embedding** 모델이 필요하며, APIM 사용을 위해 **각 모델을 최소 2개 이상의 Region에 동일한 이름으로 배포**해야 합니다.
     
     ii. ***API Management** ([APIM Manual Setup](https://github.com/azure-samples/openai-apim-lb/blob/main/docs/manual-setup.md)) —* 한국어 가이드는 본 블로그의 APIM 설정 항목을 참고하세요.
     
@@ -93,9 +108,9 @@ Azure의 PaaS형 리소스를 배포하면 해당 리소스를 호출할 수 있
 
     - **GPT-4o 모델을 East US와 East US 2에 각각 1개씩 배포** → East US의 Quota가 초과되어 Chat Completion 요청이 실패하면, APIM을 통해 자동으로 East US 2의 Quota를 사용하도록 Retry 가능
     - **Text-Embedding-Ada-002 모델을 East US와 East US 2에 각각 1개씩 배포** → 특정 Region에서 Embedding 요청이 과부하되면 다른 Region의 리소스를 활용 가능
- 
-&#160;
- 
+    
+    &#160;
+    
 2. Deployment Name
     
     
@@ -458,3 +473,16 @@ APIM에 저장된 Backend Endpoint를 사용해 Chat Completion 모델을 호출
 - Azure OpenAI로 Vector Search 기반 최종 지원자 추천
 
 이렇게 기본 RAG 파이프라인을 구축할 수 있었습니다.
+
+&#160;
+ 
+### References
+
+참고할 수 있는 URL은 아래와 같습니다.
+
+* [전체 코드 RAG_with_Resumes.ipynb](https://github.com/suzyvaque/microsoft-azure-tutorials/blob/main/RAG-SQLDB-Resumes/RAG_with_Resumes.ipynb)
+
+* [Microsoft Dev Blog의 Smart Resume Matching](https://devblogs.microsoft.com/azure-sql/smart-resume-matching-with-azure-sql-db-document-intelligence/)
+
+* [APIM 배포 및 Policy 설정](https://github.com/azure-samples/openai-apim-lb/blob/main/docs/manual-setup.md)
+
