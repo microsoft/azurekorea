@@ -18,7 +18,11 @@ featured: true
 - Azure OpenAI로 Vector Search 기반 최종 지원자 추천
 
 위의 과정을 통해 기본 RAG 파이프라인을 구축할 것입니다.
-
+ 
+&#160;
+  
+&#160;
+ 
 ## Overview
  
 &#160;
