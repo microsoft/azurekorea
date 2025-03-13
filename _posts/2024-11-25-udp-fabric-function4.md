@@ -2,10 +2,10 @@
 layout: post
 title:  "Unified Data platform Fabric 기능 (4/4): 실시간 인텔리전스, 데이터 팩토리"
 author: kiyoungkim
-tag: [ Azure, Azure Fabric ]
+tag: [ Azure, Microsoft Fabric ]
 category: [ Update ]
 image: assets/images/thumnails/fabric-function4.png
-featured: true
+# featured: true
 ---
 
 이 포스팅은 [Adam Saxton](https://blog.fabric.microsoft.com/en-us/blog/author/Adam%20Saxton)님의 [Fabric November 2024 Feature Summary](https://blog.fabric.microsoft.com/en-us/blog/fabric-november-2024-feature-summary) 글을 한글로 번역한 글입니다.

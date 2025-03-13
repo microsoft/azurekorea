@@ -2,7 +2,7 @@
 layout: post
 title:  "Unified Data platform Fabric 기능 (3/4): OneLake, 미러링, 데이터베이스, 데이터 웨어하우스, 데이터 엔지니어링, 데이터 사이언스"
 author: kiyoungkim
-tag: [ Azure, Azure Fabric ]
+tag: [ Azure, Microsoft Fabric ]
 category: [ Update ]
 image: assets/images/thumnails/fabric-function3.png
 ---
