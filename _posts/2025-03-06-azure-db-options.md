@@ -4,7 +4,7 @@ title:  "Azure에서 제공하는 DB 옵션 확인인"
 author: yorha
 tag: [ Azure DB ]
 category: [ Solution ]
-image: assets/images/thumnails/azuredb.jpg
+image: assets/images/thumnails/azurestorageoptions.jpg
 ---
 
 이번 블로그 포스팅은 다음 링크의 내용을 편집 및 각색하였습니다.  
