@@ -1,20 +1,17 @@
 ---
 layout: post
-title:  "Azure Migrate를 활용한 Modernization: VMware to AVS"
+title:  "Migration with VMware HCX: On-Premise Vmware to AVS"
 author: t-mlee
-tag: [Azure, Azure Migrate, Azure VMware Solution]
+tag: [Azure, Azure VMware Solution, VMware HCX, VMware, migration]
 category: [Solution]
-image: assets/images/thumnails/azure-migrate.png ## todo 썸네일 수정
+image: assets/images/thumnails/azure-migrate.png
 ---
 
-본 블로그는 On-Premise VMware 워크로드를 AVS로 마이그레이션하는 과정을 다루고 있습니다. 
-
-AVS 개념에 대해 간단히 알아본 후, Azure Migrate를 활용한 마이그레이션에 대해 차근차근 살펴보도록 하겠습니다. 
+본 블로그는 **On-Premise VMware 워크로드를 Azure VMware Solution으로 마이그레이션하는 과정**에 대한 내용을 담고 있습니다. 그리고 VMware HCX 구성에 대해서도 함께 다루고 있습니다.  
 
 1. [AVS](#avs)
-2. [Azure Migrate](#azure-migrate)
-3. [Migration with Azure Migrate](#migration-with-azure-migrate)
-4. [Wrap-Up](#wrap-up)
+2. [Migration with VMware HCX](#migration-with-vmware-hcx)
+3. [Wrap-Up](#wrap-up)
 
 &#160;
  
@@ -27,153 +24,176 @@ AVS 개념에 대해 간단히 알아본 후, Azure Migrate를 활용한 마이�
 위 그림에서 확인할 수 있듯이, AVS 관리의 대부분을 Microsoft가 책임지고 있기 때문에 고객은 운영 및 관리에 대한 부담을 최소화 할 수 있습니다. 
 
 
-AVS는 표준 VMware 제품을 기본으로 하기 때문에, 기존 VMware 워크로드를 AVS로 이관하더라도 운영 및 사용 환경을 일관적으로 유지할 수 있습니다. 운영 관리자는 VMware 인터페이스에 직접 접근할 수 있으며, 실무자는 추가적인 학습 없이 VMware에 대한 기존 경험을 토대로 AVS를 바로 활용할 수 있습니다. (단, 배포 및 관리를 위해서는 VMware 인터페이스가 아닌 **Azure Portal**을 활용해야 합니다.)
+![img](../assets/images/t-mlee/img2.png)*Azure VMware Solution 프라이빗 클라우드 환경*
 
+AVS는 표준 VMware 제품인 vCenter Server, vSphere 등을 활용하기 때문에, 기존 워크로드 구성 그대로 마이그레이션이 가능합니다. 이렇게 운영 및 사용 환경이 일관적으로 유지되기 때문에, 운영 관리자와 실무자 모두 기존 VMware 경험을 토대로 바로 AVS를 활용할 수 있습니다. (단, 배포 및 관리를 위해서는 VMware 인터페이스가 아닌 **Azure Portal**을 활용해야 합니다.)
 
-그리고 AVS는 Microsoft의 first-party 솔루션이기 때문에 다양한 Azure native 서비스와 통합하여 사용할 수 있습니다. 
+그리고 AVS는 Microsoft의 first-party 솔루션이기 때문에 AVS 상의 VMware 리소스를 Azure Portal로 관리할 수 있고, 다양한 Azure native 서비스와 통합하여 사용할 수도 있습니다. 
 
-AVS와 통합하여 사용할 수 있는 대표적인 Azure native 서비스에는 Microsoft Defender for Cloud와 Log Analytics가 있습니다.
+AVS와 함께 사용할 수 있는 대표적인 Azure native 서비스에는 Microsoft Defender for Cloud와 Log Analytics가 있습니다.
 - **Microsoft Defender for Cloud**: Microsoft Defender for Cloud는 인프라를 위한 통합 보안 관리 서비스로, 지능형 위협 방지 시스템을 제공합니다.
 - **Log Analytics**: Log Analytics는 Azure Monitor를 통해 발생하는 로그 데이터를 수집하고 분석하는 모니터링 솔루션입니다.
 
 뿐만 아니라, Microsoft를 단일 창구로 하여 AVS 개발 및 운영에 대한 지원을 받을 수 있습니다. 
 
+아쉽게도 지금까지는 한국 리전에서 Azure VMware Solution이 지원되지 않았습니다. 하지만 다가오는 4월에 AV48이 Korea Central 리전에 도입될 예정이며, 이를 통해 더 많은 한국 고객들이 손쉽게 Azure 환경에 온보딩 할 수 있을 것으로 기대됩니다. 
 
-지금까지 한국 리전에서는 AV36, AV52, AV64 등의 옵션만을 사용할 수 있었지만, 이번에 AV48이 한국 리전에 도입되기 때문에 앞으로는 고객의 요구사항을 더욱 다양하게 충족할 수 있게 될 것입니다. 
-
-새롭게 추가되는 AV48 스펙은 아래와 같습니다. 
+4월에 도입되는 AV48 스펙을 소개합니다. 
 
 | SKU | AV48 |
 | :------: | :------: |
-| Core | 48Cores |
 | CPU | Intel Xeon Gold 6442Y - 2.6GHz (3.3GHz with Turbo) |
-| Memory | 1TB |
-| Storage | 25.6T (running under vSAN ESA) |
+| Core | 48Cores |
+| RAM | 1TB |
+| Capacity | 25.6TB (running under vSAN ESA) |
 
 &#160;
 
-## Azure Migrate
+## Migration with VMware HCX
 
-Azure Migrate는 On-Premise VMware 또는 Hyper-V 워크로드를 Azure 환경으로 마이그레이션 하고자 하는 고객을 위한 솔루션입니다. end-to-end 마이그레이션을 지원하는 Azure Migrate를 통해 마이그레이션 절차를 간소화 할 수 있으며, 최신 버전의 Azure Migrate는 Agentless 환경에서의 마이그레이션도 지원합니다. 뿐만 아니라, Azure Migrate를 활용해 마이그레이션 진행 상황에 대한 모니터링도 가능합니다. 
+VMware HCX를 활용한 마이그레이션에 대해 알아보기에 앞서, 일반적인 마이그레이션 과정에 대해 살펴보겠습니다.
 
-&#160;
- 
-## Migration with Azure Migrate
-
-On-Premise 워크로드를 Azure로 마이그레이션 하는 시나리오는 다양하겠지만, 본 블로그에서는 **On-Premise VMware VM to Azure** 케이스를 중점적으로 살펴보도록 하겠습니다. 
-
-![img](../assets/images/t-mlee/img2.png)*일반적인 마이그레이션 과정*
+![img](../assets/images/t-mlee/img3.png)*일반적인 마이그레이션 과정* 
 
 1️⃣ **Decide**<br>
     Decide 단계에서는 마이그레이션 여부를 결정합니다. 이를 위해, 마이그레이션 대상이 될 워크로드의 구성 및 성능에 대해 분석합니다. 마이그레이션에 드는 비용 및 마이그레이션 이후에 절감될 비용 등을 비교분석하여 의사결정에 활용합니다.
 
 2️⃣ **Plan**<br>
-    Plan 단계에서는 구체적인 마이그레이션 계획을 수립합니다. 워크로드를 Azure로 옮기기 전에, Azure Migrate에서 제공하는 평가 도구로 워크로드를 평가할 수 있습니다. 평가 결과를 토대로, 리소스 별 마이그레이션의 우선순위를 설정하는 등의 방식으로 계획을 세우게 됩니다. 
+    Plan 단계에서는 구체적인 마이그레이션 계획을 수립합니다. Azure Migrate에서 제공하는 평가 도구로 워크로드를 평가하고, 그 결과를 토대로 리소스 별 마이그레이션 우선순위를 설정하는 등의 방식으로 계획을 세우게 됩니다. 
 
 3️⃣ **Execute**<br>
-    Execute 단계에서는 워크로드의 migration 또는 modernization 작업을 수행합니다. 실제 운영 환경에서의 작업을 진행하기 전에, 미리 테스트를 진행하여 전반적인 프로세스를 익혀야 합니다. 프로덕션 환경에서의 migration 또는 modernization 시, 작업으로 인한 서비스 중단 시간을 최소화 해야 합니다. 
+    Execute 단계에서는 워크로드의 migration 작업을 수행합니다. 실제 운영 환경에서의 작업을 진행하기 전에, 미리 테스트를 진행하여 전반적인 프로세스를 익히는 것이 좋습니다. 프로덕션 환경으로의 migration 시, 작업으로 인한 서비스 중단 시간을 최소화 해야 합니다. 
 
+&#160;
 
-이제부터는 본격적으로 **Azure Migrate를 활용한  VMware to AVS 마이그레이션**에 대해 알아보겠습니다. 
+### Assessment with Azure Migrate
 
-![img](../assets/images/t-mlee/img3.png)*Azure Migrate 프로세스*
+위에서 소개해드린 대로, Azure로 마이그레이션할 것인지 결정하기 위해서는 근거 데이터가 필요합니다. 우리는 Azure Migrate를 통해 마이그레이션 대상 워크로드에 대해 분석하고, 그 결과를 토대로 평가를 진행합니다. 
 
-### Prerequisites
+주로 아래 사항에 대해 평가합니다. 
+1. **Cost Estimation**<br>
+    On-Premise 환경에서의 비용과, Azure 환경으로 이관할 경우의 예상 비용을 비교합니다. 특히 Azure 환경으로 이관하면, 사용량 기반으로 비용이 부과되기 때문에 장기적으로는 비용이 절약된다는 점을 고려해야 합니다. 
+2. **Performance Analysis**<br>
+    현재 On-Premise 워크로드의 성능 및 리소스 사용량을 분석합니다. 이때 snapshot 형태로 데이터를 수집하는 것이 아니라, 일정 기간동안 수집된 데이터를 기반으로 패턴을 분석하게 됩니다. 따라서, 데이터 수집을 위한 기간 확보가 필요합니다. 
+3. **Dependency Analysis**<br>
+    현재 On-Premise 워크로드 내 VM 간 트래픽 분석을 통해, 리소스 간 dependency를 파악합니다. dependency 분석을 통해, 함께 이관해야 하는 리소스들을 그룹화 할 수 있습니다. 그리고 리소스 별 사용량을 파악함으로써, 사용되지 않는 리소스는 마이그레이션 대상에서 제외할 수도 있습니다. 
 
-Azure Migrate 솔루션을 활용하기 위한 사전 준비 단계입니다. 
-
-Azure Migrate를 사용하기 위해서는 반드시 **Azure 구독**이 필요합니다. 따라서, 구독 정보가 올바르게 설정되어 있는지 먼저 확인해야 합니다. 
-
-그리고 Azure Migrate에서 제공하는 평가 도구를 활용하여 워크로드를 평가하기 위해서는 **올바른 권한 설정**이 필요합니다. 기존 워크로드에서 발생하는 로그 데이터를 Azure로 전송할 수 있도록 권한이 제대로 설정되어 있는지 확인해야 합니다. 
-
-*Azure Migrate를 사용한 마이그레이션은 Windows 서버 및 Linux 서버에서만 지원되는 점 참고 부탁드립니다.*
-
-### Azure Migrate Setup
-
-Azure Portal에서 Azure Migrate 프로젝트를 구성하는 단계입니다. 
+위에서 소개한 Azure Migrate는 On-Premise 워크로드를 Azure로 이관하는 과정에서 활용되는 평가 도구입니다. Azure Migrate 솔루션을 활용하기 위해서는, 반드시 기존 On-Premise 워크로드에서 발생하는 로그 데이터를 Azure로 전달할 수 있도록 권한 설정이 되어있어야 합니다.
 
 ![img](../assets/images/t-mlee/img4.png)*Azure Portal > Azure Migrate*
 
-위 화면에서 *Discover, assess and migrate*를 선택하여 검색 및 평가에 대한 설정을 시작합니다. 
+전달된 데이터는 Azure Migrate 영역 내 **Assessment tools**에서 확인할 수 있습니다. 검색된 서버 개수, 서버 별 OS 등의 정보가 표시됩니다.   
 
-![img](../assets/images/t-mlee/img5.png)*Azure Portal > Azure Migrate*
+&#160;
 
-새로운 Azure Migrate 프로젝트를 만들면, 이렇게 기본적으로 Assessment tool과 Migration tool이 설정됩니다. 새로운 도구를 추가하고 싶다면, **Click here**를 클릭해 더 많은 도구를 확인할 수 있습니다. 각 도구는 한 번에 하나씩만 설정할 수 있고, 도구를 여러 개 설정하고 싶다면 여러 번 반복하여 추가하면 됩니다. 
+### Azure VMware Solution Setup
 
-Azure Migrate 프로젝트 설정을 마쳤다면, 이를 통해 기존 VMware 워크로드로부터 검색 및 평가에 대한 정보를 제공 받을 수 있습니다. 
+이제는 본격적으로 **VMware HCX를 활용한 마이그레이션** 과정에 대해 다뤄보겠습니다. 먼저 Azure VMware Solution을 배포하고, AVS 프라이빗 클라우드와 Azure가 연결될 수 있도록 구성해야 합니다. 그리고 원활한 구성을 위해서는, 반드시 **Contributor** 이상의 권한을 가져야 합니다. 
 
-*최초에는 단일 어플리케이션이나 소규모 워크로드를 활용하여, Azure Migrate 프로젝트가 제대로 설정되었는지 간단히 테스트 해보는 것을 권장합니다.*
+AVS를 배포하기 위해서는 resource provider를 등록해야 합니다. Azure Portal에 접속하여 **Microsoft.AVS**를 resource provider로 등록합니다. 
 
-### Discover VMs
+![img](../assets/images/t-mlee/img5.png)*Azure Portal > Subscriptions > resource providers*
 
-기존 워크로드의 기본적인 구성 및 dependency에 대해 파악하는 단계입니다. 기존 워크로드에 대한 검색 과정을 통해 이를 파악하는데, 검색 과정에는 Virtual Appliance가 활용됩니다. Virtual Appliance는 연속 검색을 통해 기존 워크로드의 모든 구성 정보를 파악하고, 검색 결과 기반으로 도출된 서버 구성 및 성능 데이터를 Azure Migrate로 전달합니다. 뿐만 아니라, On-Premise 서버 간 dependency 정보도 함께 Azure Migrate로 전달합니다. 
+그리고 Azure VMware Solution을 배포한 후, AVS 상에서 프라이빗 클라우드를 생성합니다. 
 
-dependency를 분석하는 대표적인 이유는 아래와 같습니다. 
-- 함께 이관해야 하는 서버들을 그룹화 할 수 있습니다. 
-- 누락된 서버의 유무를 확인할 수 있습니다. 
-- 서버 별 현재 사용 여부를 파악하고, 사용되지 않는 서버는 이관 대상에서 제외할 수 있습니다. 
+![img](../assets/images/t-mlee/img6.png)*Azure Portal > AVS > private cloud*
 
-### Review Assessment
+프라이빗 클라우드는 public access가 불가하기 때문에 반드시 private network를 통해 접근해야 합니다. 
 
-기존 VMware 워크로드를 평가하는 기준은 크게 2가지로 나뉩니다. 
+아래 4가지 방법으로 AVS 프라이빗 클라우드에 접근할 수 있습니다.
+- ExpressRoute Global Reach
+- Azure VNet peering 설정
+- VPN 연결
+- Azure Bastion 리소스를 통해 vCenter Server 접근
 
-1️⃣ **성능**<br>
-    On-Premise VMware 워크로드의 성능을 기준으로 평가할 수 있습니다. 일정 주기마다 수집되는 성능 패턴을 평가합니다. 성능 기준으로 평가하기 위해서는, 패턴 수집을 위한 기간 확보가 필수적입니다.
+그리고 ExpressRoute Global Reach를 활용하거나 VPN 연결 등을 통해서 On-Premise VMware 워크로드와 AVS를 연결할 수 있습니다. 
 
-2️⃣ **크기**<br>
-    On-Premise VMware 워크로드의 크기를 기준으로 평가할 수 있습니다. 기존 vSphere 구성의 snapshot 데이터를 기준으로 평가합니다.
+이렇게 구성을 마치면, On-Premise VMware 워크로드와 AVS, Azure가 서로 연결됩니다. 
 
-위와 같은 기준으로 검색 결과 데이터를 평가하여, 마이그레이션 여부를 결정합니다. 
+&#160;
 
-추가적으로 검토하는 사항은 아래와 같습니다. 
-- On-Premise 환경에서의 비용 대비 Azure 비용
-- 클라우드 환경 적합 여부 
-- migration 또는 modernization 직후에 예상되는 성과
+### VMware HCX Setup
 
-### Replicate VMs
+**VMware HCX(VMware Hybrid Cloud Extension)**는 간소화된 VM 마이그레이션을 지원하는 솔루션입니다. On-Premise VMware 워크로드가 Azure 환경으로 마이그레이션 될 때, VMware HCX의 vMotion 기술이 활용됩니다. vMotion 기술로 live migration 시의 서비스 중단 시간을 최소화 할 수 있습니다.  
 
-Azure로의 마이그레이션이 결정되었다면, 이제는 본격적인 마이그레이션 작업에 들어가게 됩니다. 
+VMware HCX를 활용한 마이그레이션에는 3가지 유형이 있습니다. 
 
-![img](../assets/images/t-mlee/img6.png)*Azure Portal > Azure Migrate*
+| 유형 | 대상 VM |
+| :------: | :------: |
+| live migration | 서비스 중단 시간을 최소화 해야 하는 프로덕션 VM |
+| cold migration | 이관이 필요한 개발 및 테스트 용 VM  |
+| bulk migration | 정해진 일정에 따라 이관되어야 하는 대량의 VM |
 
-Azure Migrate 영역 내 Migration tools에서, 기존 VMware 워크로드의 복제 작업을 수행할 수 있습니다. (Discover 단계를 완료하면, Replicate 버튼이 활성화됩니다.)
+<br>
 
-복제 작업 절차에 대한 자세한 설명은 [여기](https://learn.microsoft.com/en-us/training/modules/m365-azure-migrate-replicate-virtual-servers/replicate-virtual-machines)에서 확인할 수 있습니다. 
+먼저, VMware HCX를 사용하기 위해서는 On-Premise 환경에 VMware HCX를 배포해야 합니다. VMware HCX가 배포되어야, 기존 On-Premise 환경의 VM을 복제하여 Azure로 이관할 수 있습니다. 
 
-복제가 완료된 VMware 워크로드는 Azure Storage에 저장됩니다. 
+![img](../assets/images/t-mlee/img7.png)*Azure Portal > AVS > Add-ons*
 
-### Test Migration
+Azure Portal 상에서 **Enable and Deploy**를 클릭하여 간단하게 VMware HCX를 배포할 수 있습니다. 
 
-프로덕션 환경으로의 마이그레이션 이전에, 테스트 환경에서 전체 확인을 진행합니다. Azure Portal 상에서 바로 테스트가 가능합니다. 
+<br>
 
-테스트 절차에 대한 자세한 설명은 [여기](https://learn.microsoft.com/en-us/training/modules/m365-azure-migrate-replicate-virtual-servers/test-migrated-virtual-machines)에서 확인할 수 있습니다. 
+![img](../assets/images/t-mlee/img8.png)*Azure Portal > AVS > Add-ons*
 
-*테스트에 활용하는 Azure Virtual Network는 non-production을 권장합니다.*
+정상적으로 배포가 완료되면, **Migration Using HCX** 영역이 위와 같이 바뀝니다. 이 화면에서 VMware HCX에 대한 구성이 가능하고, VMware HCX Connector를 활성화 하기 위한 키를 발급 받을 수 있습니다. 
 
-### Migrate to Production
+<br>
 
-테스트까지 완료했다면, 이제 프로덕션 환경으로의 마이그레이션 작업을 수행하게 됩니다.
+![img](../assets/images/t-mlee/img9.png)*vCenter Server*
 
-우선, 테스트를 위해 사용한 리소스는 모두 정리합니다. 정리가 완료되면, 프로덕션 환경으로의 마이그레이션 작업을 수행하게 됩니다. 이때, 데이터 손실을 최소화 하기 위해 최종 버전에 대한 replication 작업이 이루어집니다. 
+그리고 VMware HCX 포털에서 다운로드 받은 VMware HCX Connector 파일을 On-Premise 환경에 배포합니다. vCenter Server 상에서 배포를 진행할 수 있습니다. 
 
-*replication 작업을 수행하는 동안에는 VM이 중단되는 점 유의해야 합니다.*
+배포가 완료되면, vCenter 상에서 VMware HCX Connector를 수동으로 가동시켜야 합니다. VMware HCX Connector 활성화를 위해서는, 위에서 발급 받았던 키를 사용하면 됩니다. 
 
-![img](../assets/images/t-mlee/img7.png)*Azure VMware Solution을 적용한 아키텍처*
+<br>
 
-성공적으로 마이그레이션 된 워크로드는 Azure 상에 존재하기 때문에 Microsoft Defender for Cloud, Azure Monitor 등의 Azure native 서비스와 통합하여 사용할 수 있습니다. 
+![img](../assets/images/t-mlee/img10.png)*On-Premise 환경에 배포된 VMware HCX*
+
+&#160;
+
+### Migration
+
+이제 본격적으로 **On-Premise VM을 AVS로 마이그레이션 하는 과정**에 대해 소개하겠습니다. 
+
+Windows 및 Linux VM에 대해서만 마이그레이션이 지원되며, 마이그레이션 진행 중에 수동으로 snapshot을 생성하거나 다른 백업 솔루션을 동시에 사용하게 되면, 마이그레이션 작업이 중단될 수도 있다는 점 참고 부탁드립니다. 
+
+<br>
+
+![img](../assets/images/t-mlee/img11.png)*VMware HCX Connector > Migration*
+
+On-Premise 환경의 VMware HCX Connector 대시보드에서, 마이그레이션 작업을 수행할 수 있습니다. Tracking 영역에서는 이전 마이그레이션에 대한 내용을 확인할 수 있습니다. 
+
+<br>
+
+![img](../assets/images/t-mlee/img12.png)*마이그레이션 설정*
+
+위 화면에서, 네트워크에 대한 각종 설정을 진행하고 마이그레이션 할 VM을 선택할 수 있습니다. 설정 완료 후, **GO**를 클릭하여 마이그레이션 작업을 시작할 수 있습니다. 
+
+<br>
+
+![img](../assets/images/t-mlee/img13.png)*마이그레이션 완료*
+
+Status 영역을 통해 마이그레이션 작업이 성공적으로 완료되었는지를 확인할 수 있습니다. 
 
 &#160;
 
 ## Wrap-Up
 
-지금까지 Azure Migrate를 활용하여 On-Premise VMware 워크로드를 AVS로 마이그레이션 하는 과정 전반에 대해 살펴봤습니다. 복잡한 마이그레이션 과정의 처음부터 끝까지 Azure Migrate를 활용할 수 있으니, On-Premise 워크로드를 Azure 환경으로 간편하게 마이그레이션 하는 데 본 블로그가 도움이 되기를 바랍니다. 🙇‍♀️
+지금까지 Azure VMware Solution과 VMware HCX를 구성하고, 이를 활용하여 On-Premise VMware 워크로드를 AVS로 마이그레이션 하는 과정 전반에 대해 살펴봤습니다. 
+
+VMware HCX를 활용하면, 복잡한 마이그레이션 과정을 간소화 할 수 있으니, 본 블로그를 참고하여 On-Premise 워크로드를 Azure 환경으로 간편하게 마이그레이션 하시기를 바랍니다. 🙇‍♀️
 
 &#160;
 
 ## References
-
 * [What is Azure VMware Solution?](https://learn.microsoft.com/en-us/azure/azure-vmware/introduction)
 * [Azure VMware Solution expands SKUs](https://blogs.vmware.com/vmware-japan/2025/03/avs-riupdates.html)
-* [Azure Migrate Overview](https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview)
-* [Start here to migrate from VMware to Azurew](https://learn.microsoft.com/en-us/azure/migrate/vmware/start-here-vmware)
-* [Set up Azure Migrate for server migration](https://learn.microsoft.com/en-us/training/modules/m365-azure-migrate-set-up/)
+* [Start here to migrate from VMware to Azure](https://learn.microsoft.com/en-us/azure/migrate/vmware/start-here-vmware)
+* [Discover servers running in a VMware environment with Azure Migrate](https://learn.microsoft.com/en-us/azure/migrate/vmware/tutorial-discover-vmware)
+* [Azure VMware Solution private cloud and cluster concepts](https://learn.microsoft.com/en-us/azure/azure-vmware/architecture-private-clouds)
+* [Deploy and configure Azure VMware Solution](https://learn.microsoft.com/en-us/azure/azure-vmware/deploy-azure-vmware-solution?tabs=azure-portal)
+* [Install and activate VMware HCX in Azure VMware Solution](https://learn.microsoft.com/en-us/azure/azure-vmware/install-vmware-hcx)
+* [Prepare to migrate VMware resources to Azure by deploying Azure VMware Solution](https://learn.microsoft.com/en-us/training/modules/deploy-azure-vmware-solution/)
+* [Migrate VMware vSphere resources from on-premises to Azure VMware Solution](https://learn.microsoft.com/en-us/training/modules/migrate-vmware-workloads-on-premises-azure-vmware-solution/l)
+
