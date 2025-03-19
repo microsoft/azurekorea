@@ -4,7 +4,7 @@ title:  "Migration with VMware HCX: On-Premise Vmware to AVS"
 author: t-mlee
 tag: [Azure, Azure VMware Solution, VMware HCX, VMware, migration]
 category: [Solution]
-image: assets/images/thumnails/azure-migrate.png
+image: assets/images/thumnails/avs-hcx.png
 ---
 
 본 블로그는 **On-Premise VMware 워크로드를 Azure VMware Solution으로 마이그레이션하는 과정**에 대한 내용을 담고 있습니다. 그리고 VMware HCX 구성에 대해서도 함께 다루고 있습니다.  
