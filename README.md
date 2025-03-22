@@ -108,7 +108,7 @@
 ### 포스트 업로드
 
 1. Repository Clone 받은 폴더로 이동하여 터미널을 켭니다.
-2. 아래 명령어를 사용하여 본인 Repository에 변경 내용으을 푸시합니다.
+2. 아래 명령어를 사용하여 본인 Repository에 변경 내용을 푸시합니다.
     
     ```markdown
     git add .
