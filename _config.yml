@@ -115,6 +115,12 @@ authors:
     avatar: 'assets/images/profiles/suzyvaque.png'
     email: t-suzyvaque@microsoft.com
     description: "Data&AI Technical Specialist Intern"
+  t-mlee:
+    name: t-mlee
+    display_name: Minkyung Lee
+    avatar: 'assets/images/profiles/mlee.jpg'
+    email: t-mlee@microsoft.com
+    description: "Azure Infra Technical Specialist Intern"
 
 # Plugins
 plugins:
