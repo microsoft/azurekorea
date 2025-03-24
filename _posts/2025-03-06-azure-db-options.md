@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Azure에서 제공하는 DB 옵션 확인인"
+title:  "Azure에서 제공하는 DB 옵션 확인하기"
 author: yorha
 tag: [ Azure DB ]
 category: [ Solution ]
