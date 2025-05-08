@@ -125,3 +125,7 @@
 6. 변경 내용을 확인한 후 Create pull request 버튼을 클릭합니다.
 
     ![image.png](assets/images/guide/image4.png)
+
+### Azure Korea 블로그
+
+완성된 포스트는 [Azure Korea](https://microsoft.github.io/azurekorea/)에서 확인 가능합니다.
