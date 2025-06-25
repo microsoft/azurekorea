@@ -121,6 +121,12 @@ authors:
     avatar: 'assets/images/profiles/mlee.jpg'
     email: t-mlee@microsoft.com
     description: "Azure Infra Technical Specialist Intern"
+  wonsungso:
+    name: wonsungso
+    display_name: Wonsung So
+    avatar: 'assets/images/profiles/wonsungso.jpg'
+    email: wonsungso@microsoft.com
+    description: "SR TECHNICAL SPECIALIST"
 
 # Plugins
 plugins:
