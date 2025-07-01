@@ -5,7 +5,6 @@ author: kiyoungkim
 tag: [ Azure, Microsoft Fabric ]
 category: [ Update ]
 image: assets/images/thumnails/fabric-sku-estimator-01.png
-featured: true
 ---
 
 이 포스팅은 [Jonathan Garriss](hhttps://blog.fabric.microsoft.com/en-us/blog/author/Jonathan%20Garriss)님의 [Announcing New Recruitment for the Private Preview of Microsoft Fabric SKU Estimator
