@@ -108,7 +108,7 @@
 ### 포스트 업로드
 
 1. Repository Clone 받은 폴더로 이동하여 터미널을 켭니다.
-2. 아래 명령어를 사용하여 본인 Repository에 변경 내용으을 푸시합니다.
+2. 아래 명령어를 사용하여 본인 Repository에 변경 내용을 푸시합니다.
     
     ```markdown
     git add .
@@ -125,3 +125,7 @@
 6. 변경 내용을 확인한 후 Create pull request 버튼을 클릭합니다.
 
     ![image.png](assets/images/guide/image4.png)
+
+### Azure Korea 블로그
+
+완성된 포스트는 [Azure Korea](https://microsoft.github.io/azurekorea/)에서 확인 가능합니다.
