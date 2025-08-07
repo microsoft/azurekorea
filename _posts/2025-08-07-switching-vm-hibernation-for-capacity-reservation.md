@@ -21,12 +21,14 @@ Azure의 **Capacity Reservation(주문형 용량 예약)** 기능은 특정 리�
 
 Capacity Reservation은 지정된 리전과 가용성 영역에서 특정 VM 크기(예: Standard_D2s_v3)에 대해 용량을 미리 예약하는 기능입니다.  
 예약된 용량은 실제 VM 배포 없이도 확보되며, 필요 시 해당 용량을 사용하여 VM을 배포할 수 있습니다. Capacity Reservation 은 Reserved Instance와 달리 기간 약정이 필요하지 않습니다.
+
 | 차이점               | Capacity Reservation                                      | Reserved Instance                                         |
 |----------------------|--------------------------------------------------------|--------------------------------------------------------|
 | **용어**             | 기간 약정이 필요하지 않으며, 고객 요구에 따라 생성 및 삭제 가능 | 1년 또는 3년의 고정 기간 약정 필요                    |
 | **청구 할인**        | 기본 VM 크기에 대한 **종량제 요금**으로 청구됨        | **종량제보다 비용 절감 효과가 큼**                     |
 | **용량 SLA**         | 지정된 지역/가용성 영역에서 **용량 제공을 보장**      | 용량 보장을 제공하지 않음<br>우선 순위 선택 가능(단, SLA 미적용) |
 | **지역 및 가용성 영역** | 지역 또는 가용성 영역 **단위로 배포 가능**            | **지역 단위**에서만 사용 가능                         |
+
 
 📚 자세히 보기: [Azure Capacity Reservation 개요](https://learn.microsoft.com/ko-kr/azure/virtual-machines/capacity-reservation-overview)
 
@@ -49,6 +51,7 @@ Capacity Reservation은 지정된 리전과 가용성 영역에서 특정 VM 크
 
 ##### Hibernation(최대 절전 모드) **Enabled(활성화) → Disabled(비활성화)**
 - `Get-AzVM` 명령 호출을 통해 가져온 $vm의 속성 중 HibernationEnabled 값을 `false`로 변경 후 `Update-AzVM` 명령을 호출하여 VM 설정을 변경합니다.
+
 ```powershell
 $resourceGroupName="<리소스그룹명>"
 $vmName="<VM명>"
@@ -57,13 +60,16 @@ $vm = Get-AzVM -ResourceGroupName $resourceGroupName -Name $vmName
 $vm.AdditionalCapabilities.HibernationEnabled = $false
 Update-AzVM -ResourceGroupName $resourceGroupName -VM $vm
 ```
+
 📚 PowerShell 명령 [Get-AzVM](https://learn.microsoft.com/ko-kr/powershell/module/az.compute/get-azvm?view=azps-14.2.0) [Update-AzVM](https://learn.microsoft.com/en-us/powershell/module/az.compute/update-azvm?view=azps-14.2.0)
 
 - 명령 호출 시 다음과 같이 적용/출력 됩니다.
 ![PowerShell 명령 결과](../assets/images/wonsungso/2025-08-07-switching-vm-hibernation-for-capacity-reservation/1_powershell.png)
+
 #### 옵션2. Azure CLI를 통한 설정 변경
 
 ##### Hibernation(최대 절전 모드) **Enabled(활성화) → Disabled(비활성화)**
+
 - `--enable-hibernation` 옵션 지정과 함께 `az vm update` 명령을 호출하여 VM 설정을 변경합니다. 
 
 ```bash
@@ -71,6 +77,7 @@ vmName="<VM명">
 resourceGroupName="<리소스그룹명>"
 az vm update -n $vmName -g $resourceGroupName --enable-hibernation false
 ```
+
 📚 CLI 명령 [az vm update](https://learn.microsoft.com/ko-kr/cli/azure/vm?view=azure-cli-latest#az-vm-update)
 
 - 명령 호출 시 다음과 같이 적용/출력 됩니다.
@@ -87,7 +94,7 @@ az vm update -n $vmName -g $resourceGroupName --enable-hibernation false
 
 ## 요약
 
-초기 Hibernation 상태 | 설정 변경 수행 | Capacity Reservation 적용 여부 |
+| 초기 Hibernation 상태 | 설정 변경 수행 | Capacity Reservation 적용 여부 |
 |------------------- |----------------|----------------------------|
 | Disabled           | 없음            | ✅ 적용 가능                 |
 | Enabled            | Disabled로 변경 (PowerShell 혹은 CLI) | ✅ 적용 가능|
