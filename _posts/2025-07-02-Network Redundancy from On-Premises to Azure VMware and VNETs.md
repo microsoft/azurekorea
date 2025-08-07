@@ -15,7 +15,7 @@ image: assets/images/jyseong/images/2025-07-02 - Network Redundancy from On-Prem
 
 
 ## High Level Architecture
-![High level architecture](./assets/images/jyseong/images/2025-07-02 - Network Redundancy from On-Premises to Azure VMware and VNETs/image.png)
+![High level architecture](../assets/images/jyseong/images/2025-07-02 - Network Redundancy from On-Premises to Azure VMware and VNETs/image.png)
 
 ## 크로스 테넌트 아키텍처 개요
 
