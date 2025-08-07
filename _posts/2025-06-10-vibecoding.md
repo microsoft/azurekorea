@@ -4,7 +4,7 @@ title:  "트랜드: 바이브 코딩(Vibe Coding)과 개발자의 미래"
 author: ilkim
 tag: [Vibe coding, GitHub Copilot, Generative AI, Developer]
 category: [Trend]
-image: assets/images/ilkim/azaisearch-image1.png
+image: assets/images/ilkim/vibecoding-image3.png
 ---
 ChatGPT로 시작된 생성형 인공지능의 도입 확산은 현재 모든 산업 부문에 걸쳐 기존의 업무 방식을 혁신적으로 변화시키고 있습니다. 특히, 소프트웨어 개발에 AI 활용은 GitHub Copilot의 등장 이후 단순 코드 자동 완성을 넘어 다양한 영역으로 발전하고 있으며, 이제 AI는 전체 코드 작성해주는 것은 물론, 코드 리뷰, 리팩토링, 테스트 작성, 문서화, PR 요약 등 개발 프로세스 전반에 걸쳐 자동화와 효율성을 증대시키고 있습니다.
 
