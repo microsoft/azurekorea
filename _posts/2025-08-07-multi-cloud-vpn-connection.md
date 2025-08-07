@@ -66,7 +66,7 @@ Virtual WAN은 **Layer 3에서 최적화된 분기 간 연결을 제공하는 �
 2. 생성한 Virtual Hub를 선택하고 왼쪽 Connectivity 블레이드에서 VPN (Site to site) 메뉴를 클릭합니다.
 3. Create VPN Gateway를 클릭하여 리소스를 생성합니다.
     
-    ![image.png](../assets/images/annajeong/image.png)
+    ![image.png](../assets/images/annajeong/multi-cloud-vpn-connection/image.png)
     
     - AS Number : BGP(Border Gateway Protocol)를 사용하는 경우, 각 네트워크(AS)는 고유한 번호를 가지는데, 이를 **AS Number**라고 합니다.  기본적으로 Azure는 AS 번호 **65515**를 사용합니다.
     - Gateway scale units : Virtual WAN에서 VPN Gateway는 **Scale Unit 단위로 성능을 확장**할 수 있으며, 이는 VPN 게이트웨이의 처리 용량을 결정합니다.  Scale Unit은 **유연하게 조정 가능**하지만, 늘리는 데 몇 분의 시간이 걸릴 수 있습니다.
@@ -98,7 +98,7 @@ Virtual WAN은 **Layer 3에서 최적화된 분기 간 연결을 제공하는 �
 2. “VPN 연결 생성” 버튼을 클릭합니다.
 3. 아래 항목들을 입력합니다:
     
-    ![image.png](../assets/images/annajeong/image%201.png)
+    ![image.png](../assets/images/annajeong/multi-cloud-vpn-connection/image%201.png)
     
     - 대상 게이트웨이 유형: 가상 프라이빗 게이트웨이
     - 대상 게이트웨이: 앞서 생성한 VGW 선택
@@ -125,7 +125,7 @@ VPN Site를 생성하는 과정에서 **Link 정보를 함께 입력**해야 합
 
 1. Link는 AWS 측에서 제공한 **VPN 터널 구성 정보**를 기반으로 아래와 같이 설정합니다.
     
-    ![image.png](../assets/images/annajeong/image%202.png)
+    ![image.png](../assets/images/annajeong/multi-cloud-vpn-connection/image%202.png)
     
     - **Link name**: Tunnel1 (또는 원하는 이름)
     - **Link provider name**: AWS (선택 항목)
@@ -144,7 +144,7 @@ VPN Site를 생성하는 과정에서 **Link 정보를 함께 입력**해야 합
 
 VPN Site와 Link 구성이 완료되었다면, 이제 마지막 단계로 **Virtual Hub에 해당 VPN Site를 연결**해주어야 합니다. 이 과정을 통해 Azure Virtual WAN 허브와 AWS 간의 **IPSec 터널이 실제로 연결**되고, 네트워크 트래픽이 흐를 수 있게 됩니다.
 
-![image.png](../assets/images/annajeong/image%203.png)
+![image.png](../assets/images/annajeong/multi-cloud-vpn-connection/image%203.png)
 
 ### VPN Site Link 수정 – PSK 설정하기
 
@@ -160,7 +160,7 @@ PSK는 **IPSec 터널의 암호화 및 인증을 위한 핵심 값**으로, AWS 
 4. BGP 설정 등 필요한 값도 함께 검토한 후 **저장(Save)** 을 클릭합니다.
 5. 정상적으로 구성이 완료되었다면 Connectivity status가 `Connected`로 변경됩니다.
     
-    ![image.png](../assets/images/annajeong/image%204.png)
+    ![image.png](../assets/images/annajeong/multi-cloud-vpn-connection/image%204.png)
     
 
 ### 마무리하며
