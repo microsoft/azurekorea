@@ -4,7 +4,7 @@ title:  "Azure Migrate를 활용한 MySQL 워크로드 마이그레이션 계획
 author: jyseong
 tag: [ Azure Migrate, Data, Infrastructure , Update ]
 category: [ Solution ]
-image: assets/images/jyseong/images/2025-07-03-Migration planning of MySQL workloads using Azure Migrate/header.png
+image: assets/images/jyseong/images/2025-07-03 - Migration planning of MySQL workloads using Azure Migrate/header.png
 ---
 
 ### 작성자 : [ankitsurkar](https://techcommunity.microsoft.com/users/ankitsurkar/1930507)

@@ -4,7 +4,7 @@ title:  "프라이빗 링크를 활용한 Databricks와 Storage Account 간의 �
 author: jyseong
 tag: [ Azure Networking , Azure Private Link ]
 category: [ Solution ]
-image: assets/images/jyseong/images/2025-07-02-Network Redundancy from On-Premises to Azure VMware and VNETs/image.png
+image: assets/images/jyseong/images/2025-07-02 - Network Redundancy from On-Premises to Azure VMware and VNETs/image.png
 ---
 
 ### 작성자 : [umairakhtar19](https://techcommunity.microsoft.com/users/umairakhtar19/2807670)
@@ -15,7 +15,7 @@ image: assets/images/jyseong/images/2025-07-02-Network Redundancy from On-Premis
 
 
 ## High Level Architecture
-![High level architecture](./assets/images/jyseong/images/2025-07-02-Network Redundancy from On-Premises to Azure VMware and VNETs/image.png)
+![High level architecture](./assets/images/jyseong/images/2025-07-02 - Network Redundancy from On-Premises to Azure VMware and VNETs/image.png)
 
 ## 크로스 테넌트 아키텍처 개요
 
