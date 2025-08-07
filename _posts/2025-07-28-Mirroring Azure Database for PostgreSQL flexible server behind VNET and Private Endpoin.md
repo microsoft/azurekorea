@@ -4,7 +4,6 @@ title:  "VNET 및 프라이빗 엔드포인트 환경에서 Azure Database for P
 author: jyseong
 tag: [ Azure Database for PostgreSQL ]
 category: [ Solution ]
-image: assets/images/jyseong/images/2025-07-28-Mirroring Azure Database for PostgreSQL flexible server behind VNET and Private Endpoin/show-private-link-overview.png
 ---
 
 ### 작성자 : [scoriani](https://techcommunity.microsoft.com/users/scoriani/218343)
@@ -31,18 +30,18 @@ PostgreSQL Flexible Server의 경우, 선택된 테이블을 Delta 포맷으로 
 
 VNET 또는 프라이빗 엔드포인트 뒤에 있는 PostgreSQL Flexible Server를 미러링하기 위한 첫 번째 단계는, 아래 그림과 같이 Microsoft Fabric 테넌트에서 VNET Data Gateway를 생성하는 것입니다.
 
-![VNET Data Gateway](assets/images/jyseong/images/2025-07-28-Mirroring Azure Database for PostgreSQL flexible server behind VNET and Private Endpoint/Screenshot 2025-07-11 at 5.27.51 PM.png)
+![VNET Data Gateway](../assets/images/jyseong/images/2025-07-28-Mirroring Azure Database for PostgreSQL flexible server behind VNET and Private Endpoint/Screenshot 2025-07-11 at 5.27.51 PM.png)
 
 이제 이 패널에서 "Create a virtual network gateway" 버튼을 클릭한 후, Fabric 용량 정보와 Flexible Server가 배포된 Azure 가상 네트워크(VNET) 정보를 입력하여 게이트웨이를 생성할 수 있습니다.
 또는, 해당 Azure VNET에 대해 이미 생성된 기존 VNET Data Gateway가 있다면 그것을 그대로 사용할 수도 있습니다.
 
 
-![New VNET Data Gateway](assets/images/jyseong/images/2025-07-28-Mirroring Azure Database for PostgreSQL flexible server behind VNET and Private Endpoint/Screenshot 2025-07-11 at 5.29.54 PM.png)
+![New VNET Data Gateway](../assets/images/jyseong/images/2025-07-28-Mirroring Azure Database for PostgreSQL flexible server behind VNET and Private Endpoint/Screenshot 2025-07-11 at 5.29.54 PM.png)
 
 마지막 단계는 Fabric에서 미러링할 PostgreSQL 데이터베이스를 생성하는 과정에서 수행됩니다.
 "New source(새 소스)" 페이지에서, 이제 Microsoft Fabric 테넌트 내에 존재하며 해당 Azure 가상 네트워크(VNET)에 있는 PostgreSQL 데이터베이스에 접근할 수 있는 Data Gateway를 선택할 수 있습니다.
 
-![Connection](assets/images/jyseong/images/2025-07-28-Mirroring Azure Database for PostgreSQL flexible server behind VNET and Private Endpoint/Screenshot 2025-07-11 at 5.39.57 PM.png)
+![Connection](../assets/images/jyseong/images/2025-07-28-Mirroring Azure Database for PostgreSQL flexible server behind VNET and Private Endpoint/Screenshot 2025-07-11 at 5.39.57 PM.png)
 
 이 작업이 완료되면, Microsoft Fabric 서비스는 프라이빗 연결을 통해 Data Gateway를 사용하여 PostgreSQL Flexible Server에 연결하며, 미러링 아티팩트 생성을 지속적으로 수행하게 됩니다.
 초기 스냅샷과 이후 변경 배치는 예상대로 PostgreSQL Flexible Server에서 Microsoft Fabric의 OneLake로 정기적으로 전송됩니다.

@@ -26,7 +26,7 @@ LockedSPLResourceFound :Unable to verify management locks on Resource '$Resource
 포털에서 공유 프라이빗 링크를 수동으로 삭제해야 합니다.
 설정(Settings) > 네트워킹(Networking) > 공유 프라이빗 액세스(Shared private access) 탭으로 이동합니다.
 
-![Shared Private Link](assets/images/jyseong/images/2025-07-16-[AI Search] LockedSPLResourceFound error when deleting AI Search/clipboard_image-1-1747805859324.png)
+![Shared Private Link](../assets/images/jyseong/images/2025-07-16-[AI Search] LockedSPLResourceFound error when deleting AI Search/clipboard_image-1-1747805859324.png)
 
 공유 프라이빗 링크를 모두 삭제한 후, AI 검색(AI Search) 리소스를 다시 삭제해 보시기 바랍니다.
 
@@ -35,7 +35,7 @@ LockedSPLResourceFound :Unable to verify management locks on Resource '$Resource
 **[추가 정보 – 공유 프라이빗 링크 삭제를 시도했지만 오랫동안 대기 상태인 경우]**
 경우에 따라 공유 프라이빗 링크가 아래와 같이 오랜 시간 동안 삭제 중 상태로 표시될 수 있습니다. (예: 3시간 이상 또는 그 이상)
 
-![Shared Private access](assets/images/jyseong/images/2025-07-16-[AI Search] LockedSPLResourceFound error when deleting AI Search/clipboard_image-2-1747805859327.png)
+![Shared Private access](../assets/images/jyseong/images/2025-07-16-[AI Search] LockedSPLResourceFound error when deleting AI Search/clipboard_image-2-1747805859327.png)
 
 이 경우에는, 공유 프라이빗 링크가 제대로 삭제되지 않아 AI 검색(AI Search)을 삭제할 수 없는 문제라고 Support 팀에 문의해 주세요.
 Support 팀이 해당 문제를 확인하고 처리해 드리겠습니다!

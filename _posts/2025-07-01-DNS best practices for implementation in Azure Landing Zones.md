@@ -4,7 +4,6 @@ title:  "Azure Landing Zone에서 DNS best practice 구현하기"
 author: jyseong
 tag: [ Azure Networking ]
 category: [ Solution ]
-image: assets/images/jyseong/images/2025-07-01-DNS best practices for implementation in Azure Landing Zones/New-Azure-Private-DNS.png
 ---
 
 ### 작성자 : [AshishRana](https://techcommunity.microsoft.com/users/ashishrana/2842247)
