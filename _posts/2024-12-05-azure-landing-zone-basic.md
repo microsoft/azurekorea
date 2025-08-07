@@ -5,7 +5,6 @@ author: yorha
 tag: [ Azure Landing Zone ]
 category: [ Solution ]
 image: assets/images/thumnails/landingzone.jpg
-featured: true
 ---
 
 
