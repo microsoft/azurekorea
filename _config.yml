@@ -1,3 +1,168 @@
+<<<<<<< HEAD
+# Site
+name: "Azure Tech Blog KR"
+title: "Azure Tech Blog KR"
+description: "Microsoft Korea Azure 클라우드 사업부의 현직자들이 직접 쓰는 Korea Azure Tech Blog"
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/logo.png'
+baseurl: /azurekorea
+google_analytics: 'UA-46278016-1'
+disqus: 'demowebsite'
+mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+include: ["_pages"]
+permalink: /:title/
+
+# Authors
+authors:
+  annajeong:
+    name: annajeong
+    display_name: Boram Jeong
+    avatar: 'assets/images/profiles/annajeong.jpg'
+    email: annajeong@microsoft.com
+    description: "Azure Infra Technical Specialist"
+  rose:
+    name: rose
+    display_name: HyeonYeong Seo    
+    avatar: 'assets/images/profiles/roseseo.jpg'
+    email: roseseo@microsoft.com
+    description: "Azure Infra Specialist @Microsoft"
+  junginlee:
+    name: junginlee
+    display_name: JungIn Lee
+    avatar: 'assets/images/profiles/junginlee.jpg'
+    email: junginlee@microsoft.com
+    description: "Specialist Team Unit Lead at Microsoft Korea"
+  ilkim:
+    name: ilkim
+    display_name: Il Joong Kim
+    avatar: 'assets/images/profiles/ilkim.png'
+    email: ilkim@microsoft.com
+    description: "Technical Architect at Microsoft Innovation Hub"
+  oskwon:
+    name: oskwon
+    display_name: Ohsung Kwon
+    avatar: 'assets/images/profiles/oskwon.png'
+    email: oskwon@microsoft.com
+    description: "Technical Architect at Microsoft Innovation Hub"
+  srjeon:
+    name: srjeon
+    display_name: Seung Rok Jeon
+    avatar: 'assets/images/profiles/srjeon.jpg'
+    email: srjeon@microsoft.com
+    description: "Azure Solution Team Lead at Microsoft Korea"
+  jyseong:
+    name: jyseong
+    display_name: Ji Yong Seong
+    avatar: 'assets/images/profiles/jyseong.jpg'
+    email: jyseong@microsoft.com
+    description: "SR TECHNICAL SPECIALIST"
+  yorha:
+    name: yorha
+    display_name: Youkhang Rha
+    avatar: 'assets/images/profiles/yorha.jpg'
+    email: yorha@microsoft.com
+    description: "Microsoft Technical Specialist"
+  seojiyoung:
+    name: seojiyoung
+    display_name: Jiyoung Seo
+    avatar: 'assets/images/profiles/seojiyoung.jpg'
+    email: seojiyoung@microsoft.com
+    description: "SR SPECIALIST - Data&AI"
+  kiyoungkim:
+    name: kiyoungkim
+    display_name: Ki Young Kim
+    avatar: 'assets/images/profiles/kiyoungkim.jpg'
+    email: kiyoungkim@microsoft.com
+    description: "Data& AI Technical Specialist at Microsoft Korea"
+  daekeunkim:
+    name: daekeunkim
+    display_name: Dae Keun Kim
+    avatar: 'assets/images/profiles/daekeunkim.jpg'
+    email: daekeunkim@microsoft.com
+    description: "SR TECHNICAL SPECIALIST"
+  shki:
+      name: shki
+      display_name: Se Hee Kim
+      avatar: 'assets/images/profiles/shki.jpg'
+      email: shki@microsoft.com
+      description: "SR TECHNICAL SPECIALIST"
+  sanghlee:
+      name: sanghlee
+      display_name: Sanghoon Lee
+      avatar: 'assets/images/profiles/default.png'
+      email: sanghlee@microsoft.com
+      description: "SR TECHNICAL SPECIALIST"
+  taeyok:
+      name: taeyok
+      display_name: Tae Young Kim
+      avatar: 'assets/images/profiles/taeyok.jpg'
+      email: taeyok@microsoft.com
+      description: "SR TECHNICAL SPECIALIST"
+  duchoi:
+      name: duchoi
+      display_name: Duk Soon Choi
+      avatar: 'assets/images/profiles/duchoi.jpg'
+      email: duchoi@microsoft.com
+      description: "SR TECHNICAL SPECIALIST"
+  kyungbinoh:
+    name: kyungbinoh
+    display_name: kyungbin Oh
+    avatar: 'assets/images/profiles/kyungbinoh.jpg'
+    email: kyungbinoh@microsoft.com
+    description: "Microsoft Azure Infra Specialist"
+  t-suzyvaque:
+    name: t-suzyvaque
+    display_name: Suzy Vaque
+    avatar: 'assets/images/profiles/suzyvaque.png'
+    email: t-suzyvaque@microsoft.com
+    description: "Data&AI Technical Specialist Intern"
+  t-mlee:
+    name: t-mlee
+    display_name: Minkyung Lee
+    avatar: 'assets/images/profiles/mlee.jpg'
+    email: t-mlee@microsoft.com
+    description: "Azure Infra Technical Specialist Intern"
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+    
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+    
+# Pagination 
+paginate: 3
+paginate_path: /page:num/
+    
+# Other
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
+adsense: "disabled"
+adsense-data-ad-client: "ca-pub-3412143450191416"
+adsense-data-ad-slot: "1363087678"
+
+# Lazy Images ("enabled" or "disabled")
+lazyimages: "disabled"
+
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
+=======
 # Site
 name: "Azure Tech Blog KR"
 title: "Azure Tech Blog KR"
@@ -167,3 +332,4 @@ adsense-data-ad-slot: "1363087678"
 lazyimages: "disabled"
 
 exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
+>>>>>>> 52c8d4628aa8fdb3c98da68c0393cf9b4f7a5ff0
