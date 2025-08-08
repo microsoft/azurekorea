@@ -3,23 +3,18 @@
   "image": "mcr.microsoft.com/devcontainers/ruby:3.2",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {}
-  },
-
   "forwardPorts": [4000, 35729],
   "portsAttributes": {
     "4000": { "label": "Jekyll", "onAutoForward": "openBrowser" },
     "35729": { "label": "LiveReload" }
   },
 
-  // 빌드 도구 설치 (C 확장 빌드용)
-  "onCreateCommand": "apt-get update && apt-get install -y build-essential gcc g++ make pkg-config ruby-dev",
+  // 컨테이너 생성 시 빌드 도구 설치 + bundler 준비
+  "onCreateCommand": "apt-get update && apt-get install -y build-essential gcc g++ make pkg-config ruby-dev && gem install bundler || true",
 
-  // bundler 준비 + 프로젝트 로컬 경로에 설치
-  "postCreateCommand": "gem install bundler || true && bundle config set path vendor/bundle && bundle install || true",
+  // bundler 경로 고정 + Gemfile 설치
+  "postCreateCommand": "bundle config set path vendor/bundle && bundle install || true",
 
-  // VS Code 쪽에서 ruby-lsp를 전역으로 깔지 않게 bundler 사용 강제
   "customizations": {
     "vscode": {
       "extensions": [
@@ -31,7 +26,7 @@
         "rubyLsp.enabled": true,
         "rubyLsp.useBundler": true,
         "rubyLsp.bundleGemfile": "${workspaceFolder}/Gemfile",
-        "rubyLsp.rubyVersionManager": "none"  // RVM 인식 끔
+        "rubyLsp.rubyVersionManager": "none"
       }
     }
   }
