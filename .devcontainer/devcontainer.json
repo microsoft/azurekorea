@@ -13,15 +13,19 @@
     "35729": { "label": "LiveReload" }
   },
 
-  "onCreateCommand": "gem install bundler || true",
-  "postCreateCommand": "bundle config set path vendor/bundle && bundle install && (bundle info webrick >/dev/null 2>&1 || bundle add webrick)",
+  "onCreateCommand": "sudo apt-get update && sudo apt-get install -y build-essential gcc g++ make pkg-config || true",
+  "postCreateCommand": "gem install bundler || true && bundle config set path vendor/bundle && bundle install && (bundle info webrick >/dev/null 2>&1 || bundle add webrick)",
 
   "customizations": {
     "vscode": {
       "extensions": [
         "rebornix.Ruby",
         "yzhang.markdown-all-in-one"
-      ]
+      ],
+      "settings": {
+        "rubyLsp.enabled": true,
+        "rubyLsp.useBundler": true
+      }
     }
   }
 }
