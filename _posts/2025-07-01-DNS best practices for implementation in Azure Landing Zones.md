@@ -97,7 +97,7 @@ DNS 쿼리를 방화벽을 통해 검사하지 않고, 방화벽을 우회하여
 ---
 이 설정을 통해 온-프레미스 Active Directory DNS와 Azure Private DNS가 원활하게 연동됩니다.
 
-![Conditional forwaders](./assets/images/jyseong/images/2025-07-01 - DNS best practices for implementation in Azure Landing Zones/image1.png)
+![Conditional forwaders](../assets/images/jyseong/images/2025-07-01 - DNS best practices for implementation in Azure Landing Zones/image1.png)
 
 **참고 사항**
 
@@ -107,7 +107,7 @@ DNS 쿼리를 방화벽을 통해 검사하지 않고, 방화벽을 우회하여
 > 이 옵션을 사용하면 조건부 전달자가 Active Directory에 저장되고 복제되는데,  
 > 복잡한 멀티 구독·멀티 환경에서 문제를 일으킬 수 있습니다.
 
-![Store this conditional forwarder in Active Directory and replicate as follows](./assets/images/jyseong/images/2025-07-01 - DNS best practices for implementation in Azure Landing Zones/image2.png)
+![Store this conditional forwarder in Active Directory and replicate as follows](../assets/images/jyseong/images/2025-07-01 - DNS best practices for implementation in Azure Landing Zones/image2.png)
 
 **참고 문서** : [https://github.com/dmauser/PrivateLink/tree/master/DNS-Integration-Scenarios#43-on-premises-dns-server-conditional-forwarder-considerations](https://github.com/dmauser/PrivateLink/tree/master/DNS-Integration-Scenarios#43-on-premises-dns-server-conditional-forwarder-considerations)
 
@@ -120,5 +120,4 @@ DNS 쿼리를 방화벽을 통해 검사하지 않고, 방화벽을 우회하여
 5. 다수 Azure 테넌트에 환경이 분산된 경우에는 조건부 전달자 존을 AD 복제하지 않는 것이 좋습니다.  
 6. DNS 설계를 초기에 신중히 계획하고, 인프라 코드(infrastructure-as-code)에 포함시키면, 이후 스포크(spoke)가 몇 개가 늘어나더라도 Landing Zone이 깔끔하게 확장됩니다.
 
-- 2025년 6월 10일 업데이트 됨.
-- 2025년 7월 1일 번역 함. (by [JYSEONG(MSFT)](https://techcommunity.microsoft.com/users/ji%20yong%20seong/219866) / [GitHub](https://github.com/jiyongseong))
+- 2025년 6월 10일 업데이트 됨.- 2025년 7월 1일 번역 함. (by [JYSEONG(MSFT)](https://techcommunity.microsoft.com/users/ji%20yong%20seong/219866) / [GitHub](https://github.com/jiyongseong))

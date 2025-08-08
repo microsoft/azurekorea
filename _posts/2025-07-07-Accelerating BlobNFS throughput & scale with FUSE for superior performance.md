@@ -35,8 +35,8 @@ NFS 3.0 프로토콜 지원 또는 POSIX 준수가 필요한 고객을 위해, A
 
 **참고:** ***해당 VM은 쓰기 처리량보다 읽기 처리량이 더 높습니다.*** 업데이트된 AZNFS의 경우, 4개 이상의 병렬 파일 읽기/쓰기 작업부터는 VM NIC 대역폭에 의해 처리량이 제한되거나, 그 이상으로 확장될 수 있습니다.
 
-![read throughput](assets/images/jyseong/images/2025-07-07 - Accelerating BlobNFS throughput & scale with FUSE for superior performance/clipboard_image-1-1751528195962.png)
-![write throughput](assets/images/jyseong/images/2025-07-07 - Accelerating BlobNFS throughput & scale with FUSE for superior performance/clipboard_image-2-1751528195963.png)
+![read throughput](../assets/images/jyseong/images/2025-07-07 - Accelerating BlobNFS throughput & scale with FUSE for superior performance/clipboard_image-1-1751528195962.png)
+![write throughput](../assets/images/jyseong/images/2025-07-07 - Accelerating BlobNFS throughput & scale with FUSE for superior performance/clipboard_image-2-1751528195963.png)
 
 ## 🛠️ 시작하기
 프리뷰에 등록하려면 이 [양식](https://forms.microsoft.com/r/MGBrprn6hz)을 사용하여 등록해 주세요.
