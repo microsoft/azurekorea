@@ -13,18 +13,25 @@
     "35729": { "label": "LiveReload" }
   },
 
-  "onCreateCommand": "sudo apt-get update && sudo apt-get install -y build-essential gcc g++ make pkg-config || true",
-  "postCreateCommand": "gem install bundler || true && bundle config set path vendor/bundle && bundle install && (bundle info webrick >/dev/null 2>&1 || bundle add webrick)",
+  // 빌드 도구 설치 (C 확장 빌드용)
+  "onCreateCommand": "apt-get update && apt-get install -y build-essential gcc g++ make pkg-config ruby-dev",
 
+  // bundler 준비 + 프로젝트 로컬 경로에 설치
+  "postCreateCommand": "gem install bundler || true && bundle config set path vendor/bundle && bundle install || true",
+
+  // VS Code 쪽에서 ruby-lsp를 전역으로 깔지 않게 bundler 사용 강제
   "customizations": {
     "vscode": {
       "extensions": [
+        "Shopify.ruby-lsp",
         "rebornix.Ruby",
         "yzhang.markdown-all-in-one"
       ],
       "settings": {
         "rubyLsp.enabled": true,
-        "rubyLsp.useBundler": true
+        "rubyLsp.useBundler": true,
+        "rubyLsp.bundleGemfile": "${workspaceFolder}/Gemfile",
+        "rubyLsp.rubyVersionManager": "none"  // RVM 인식 끔
       }
     }
   }
