@@ -1,19 +1,31 @@
 {
   "name": "Jekyll GitHub Pages",
   "image": "jekyll/jekyll:latest",
-  "remoteUser": "jekyll",
+
+  // 로컬 코드 → 컨테이너 /srv/jekyll 에 마운트
+  "workspaceMount": "source=${localWorkspaceFolder},target=/srv/jekyll,type=bind",
   "workspaceFolder": "/srv/jekyll",
 
+  // jekyll 이미지 기본 유저
+  "remoteUser": "jekyll",
+
+  "init": true,
   "forwardPorts": [4000, 35729],
   "portsAttributes": {
     "4000": { "label": "Jekyll", "onAutoForward": "openBrowser" },
     "35729": { "label": "LiveReload" }
   },
 
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {}
-  },
+  // bundler 설치 + Gemfile 기반 gem 설치 + webrick 추가
+  "onCreateCommand": "gem install bundler || true",
+  "postCreateCommand": "bundle config set path vendor/bundle && bundle install && (bundle info webrick >/dev/null 2>&1 || bundle add webrick)",
 
-  "postCreateCommand": "bundle config set path vendor/bundle && bundle install && (bundle show webrick >/dev/null 2>&1 || bundle add webrick)",
+  // 컨테이너 시작 시 Jekyll 미리보기 자동 실행
+  "postStartCommand": "bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling --baseurl \"\"",
 
-  "postStartCommand": "bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling_
+  "customizations": {
+    "vscode": {
+      "extensions": ["rebornix.Ruby", "yzhang.markdown-all-in-one"]
+    }
+  }
+}
