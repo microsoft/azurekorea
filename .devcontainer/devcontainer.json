@@ -1,10 +1,10 @@
 {
   "name": "Jekyll on Ruby (Debian)",
-  "image": "mcr.microsoft.com/devcontainers/ruby:3.2",  // Debian 기반, VS Code 호환
+  "image": "mcr.microsoft.com/devcontainers/ruby:3.2",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
   "features": {
-    "ghcr.io/devcontainers/features/node:1": {}        // (옵션) 일부 테마의 자산 빌드용
+    "ghcr.io/devcontainers/features/node:1": {}
   },
 
   "forwardPorts": [4000, 35729],
@@ -16,11 +16,12 @@
   "onCreateCommand": "gem install bundler || true",
   "postCreateCommand": "bundle config set path vendor/bundle && bundle install && (bundle info webrick >/dev/null 2>&1 || bundle add webrick)",
 
-  "postStartCommand": "bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling --baseurl \"\"",
-
   "customizations": {
     "vscode": {
-      "extensions": ["rebornix.Ruby", "yzhang.markdown-all-in-one"]
+      "extensions": [
+        "rebornix.Ruby",
+        "yzhang.markdown-all-in-one"
+      ]
     }
   }
 }
