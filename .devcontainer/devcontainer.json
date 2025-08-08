@@ -1,0 +1,33 @@
+{
+  "name": "Jekyll on Ruby (Debian)",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3.2",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  "forwardPorts": [4000, 35729],
+  "portsAttributes": {
+    "4000": { "label": "Jekyll", "onAutoForward": "openBrowser" },
+    "35729": { "label": "LiveReload" }
+  },
+
+  // 컨테이너 생성 시 빌드 도구 설치 + bundler 준비
+  "onCreateCommand": "apt-get update && apt-get install -y build-essential gcc g++ make pkg-config ruby-dev && gem install bundler || true",
+
+  // bundler 경로 고정 + Gemfile 설치
+  "postCreateCommand": "bundle config set path vendor/bundle && bundle install || true",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Shopify.ruby-lsp",
+        "rebornix.Ruby",
+        "yzhang.markdown-all-in-one"
+      ],
+      "settings": {
+        "rubyLsp.enabled": true,
+        "rubyLsp.useBundler": true,
+        "rubyLsp.bundleGemfile": "${workspaceFolder}/Gemfile",
+        "rubyLsp.rubyVersionManager": "none"
+      }
+    }
+  }
+}

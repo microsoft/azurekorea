@@ -1,31 +1,60 @@
-# Azure Tech Blog
+# 블로그 포스팅 가이드
 
-- 사전 준비
-- 포스트 작성 가이드
-- 포스트 업로드
+## 레포지토리 복제
 
-### 사전 준비
-
-**Repository fork**
-
-1. 브라우저에서 [https://github.com/microsoft/azurekorea](https://github.com/microsoft/azurekorea)에 접속한 뒤, 회사 계정으로 GitHub에 로그인합니다.
+1. 브라우저에서 [https://github.com/microsoft/azurekorea](https://github.com/microsoft/azurekorea)에 접속한 뒤, **회사 계정(alias@microsoft.com)**으로 GitHub에 로그인합니다.
 2. 오른쪽 상단 Fork 버튼을 클릭합니다.
     
-    ![image.png](assets/images/guide/image1.png)
+    ![image.png](assets/images/guide/image.png)
     
-3. Owner에 본인 계정을 선택하고 Create fork 버튼을 클릭합니다.
+3. Owner에 본인 계정을 선택하고 `Create fork` 버튼을 클릭합니다.
     
-    ![image.png](assets/images/guide/image2.png)
+    ![image.png](assets/images/guide/image%201.png)
     
-4. Fork가 완료되면 본인 계정에서 azurekorea Repository를 확인할 수 있습니다. 
-5. Code 버튼을 눌러 Clone URL을 복사 후, 로컬 디렉토리에서 아래 명령어를 사용해 Repository를 Clone합니다.
+4. 복제가 완료되면 본인 계정에서 **azurekorea** 레포지토리를 확인할 수 있습니다.
+5. Code 버튼을 클릭하고 `Codespaces` 탭을 선택합니다.
+6. `Create codespace on main` 버튼을 클릭합니다.
     
-    ```bash
-    git clone {Clone URL}
-    ```
+    ![image.png](assets/images/guide/image%202.png)
     
 
-### 포스트 작성 가이드
+## Codespaces 구성
+
+Codespaces에 필요한 환경은 `.devcontainer/devcontainer.json` 파일에 구성되어 있어, 자동으로 세팅됩니다.
+
+구성이 완료되면 Preview 페이지에서 수정 사항을 실시간으로 확인하며 포스트를 작성할 수 있습니다.
+
+* 초기 구성 시 약간의 시간이 소요될 수 있습니다. (약 1~3분)
+
+1. 화면이 뜨더라도 터미널의 의존성 설치 프로세스가 끝날 때까지 잠시 기다려주세요.
+    
+    ![image.png](assets/images/guide/image%203.png)
+    
+2. 컨테이너 구성이 완료되면 아래 명령어를 실행해 줍니다.
+    
+    **최초 1회 실행**
+    
+    ```bash
+    bundle config set path vendor/bundle
+    bundle install
+    bundle info webrick >/dev/null 2>&1 || bundle add webrick
+    ```
+    
+    **이후 아래 명령어만 실행**
+    
+    ```bash
+    bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling --baseurl ""
+    ```
+    
+3. 자동으로 열린 새탭에서 정상적으로 실행이 되지 않을 경우, 터미널의 Server address를 클릭하면 새 탭에서 정상적으로 Preview를 확인하실 수 있습니다.
+
+**(팝업 차단)** 팝업 차단 알림이 뜰 경우, 해당 사이트에 대한 팝업 차단을 해제하고, 실행중인 프로세스를 중지 후, 아래 명령어를 한 번 더 실행합니다.
+
+```bash
+bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling --baseurl ""
+```
+
+## 포스트 작성 가이드
 
 수정할 부분은 아래와 같습니다.
 
