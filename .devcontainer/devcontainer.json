@@ -1,0 +1,19 @@
+{
+  "name": "Jekyll GitHub Pages",
+  "image": "jekyll/jekyll:latest",
+  "remoteUser": "jekyll",
+  "workspaceFolder": "/srv/jekyll",
+
+  "forwardPorts": [4000, 35729],
+  "portsAttributes": {
+    "4000": { "label": "Jekyll", "onAutoForward": "openBrowser" },
+    "35729": { "label": "LiveReload" }
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+
+  "postCreateCommand": "bundle config set path vendor/bundle && bundle install && (bundle show webrick >/dev/null 2>&1 || bundle add webrick)",
+
+  "postStartCommand": "bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling_
