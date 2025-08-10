@@ -5,6 +5,7 @@ author: jyseong
 tag: [ Azure Database for PostgreSQL ]
 category: [ Solution ]
 image: assets/images/jyseong/images/2025-07-28/show-private-link-overview.png
+featured: true
 ---
 
 ### 작성자 : [scoriani](https://techcommunity.microsoft.com/users/scoriani/218343)

@@ -5,6 +5,7 @@ author: seojiyoung
 tag: [ Azure Openai, Ptu, OpenAI, Azure Openai O1 ]
 category: [ Solution ]
 image: assets/images/thumnails/openai.png
+featured: true
 --- 
 
 Chat GPT 의 기반인 OpenAI GPT 모델이 Azure 클라우드에서 구동되고 있다는 사실을 알고 계셨나요? Azure는 클라우드 벤더사 중 유일하게 OpenAI GPT 모델을 B2B 사업화하여 안전한 클라우드 환경에서 사용할 수 있도록 제공하고 있습니다. 이번 포스팅에서는 Azure OpenAI 서비스에 대해 설명합니다.

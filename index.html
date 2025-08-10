@@ -10,23 +10,126 @@ title: Home
 <!-- Featured
 ================================================== -->
 <section class="featured-posts">
-    <div class="section-title">
-        <h2><span>Featured</span></h2>
+  <div class="section-title">
+    <h2><span>Featured</span></h2>
+  </div>
+
+  <div class="featured-slider" tabindex="0">
+    <button class="nav prev" aria-label="Previous" type="button">‹</button>
+
+    <div class="featured-track">
+      {%- assign featured_posts = site.posts | where_exp: "p", "p.featured == true" -%}
+      {%- if featured_posts.size == 0 -%}
+        {%- assign featured_posts = site.posts | slice: 0, 6 -%}
+      {%- endif -%}
+
+      {%- for post in featured_posts -%}
+        {%- assign i0 = forloop.index0 -%}
+        {%- assign mod2 = i0 | modulo: 2 -%}
+        {%- assign is_last = forloop.last -%}
+
+        {%- if mod2 == 0 -%}
+        <!-- slide start -->
+        <div class="slide">
+          <div class="featured-row">
+        {%- endif -%}
+
+            <div class="featured-item">
+              {% include featuredbox.html post=post %}
+            </div>
+
+        {%- if mod2 == 1 or is_last == true -%}
+          {%- if is_last == true and mod2 == 0 -%}
+            <!-- 홀수 개면 빈 칸 하나로 2칸 유지 -->
+            <div class="featured-item featured-item--ghost" aria-hidden="true"></div>
+          {%- endif -%}
+          </div>
+        </div>
+        <!-- slide end -->
+        {%- endif -%}
+
+      {%- endfor -%}
     </div>
-    <div class="row">
 
-    {% for post in site.posts %}
-
-        {% if post.featured == true %}
-
-            {% include featuredbox.html %}
-
-        {% endif %}
-
-    {% endfor %}
-
-    </div>
+    <button class="nav next" aria-label="Next" type="button">›</button>
+  </div>
 </section>
+
+<style>
+/* --- overlay 네비: 사각형 버튼 --- */
+.featured-slider{ position:relative; overflow:hidden; padding:0; }
+.featured-slider .nav{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:44px; height:44px; border:0; border-radius:6px;
+  background:rgba(0,0,0,.4); color:#fff; z-index:5;
+  display:grid; place-items:center; cursor:pointer;
+  box-shadow:0 2px 6px rgba(0,0,0,.2);
+}
+.featured-slider .nav:hover{ background:rgba(0,0,0,.55); }
+.featured-slider .nav:disabled{ opacity:.45; cursor:default; }
+.featured-slider .nav.prev{ left:12px; }
+.featured-slider .nav.next{ right:12px; }
+
+/* 트랙/슬라이드 & sibling transition */
+.featured-track{ display:flex; will-change:transform; transition:transform .55s cubic-bezier(.22,.61,.36,1); }
+.slide{ flex:0 0 100%; padding:0 2px; transition:transform .55s ease,opacity .55s ease; transform:scale(.965); opacity:.65; }
+.slide.is-current{ transform:scale(1); opacity:1; }
+.slide.is-current + .slide{ transform:scale(.985); opacity:.85; }
+
+/* 한 줄에 2칸 고정 (Bootstrap 간섭 무시) */
+.featured-row{ display:grid !important; grid-template-columns:repeat(2, minmax(0,1fr)) !important; gap:16px; align-items:stretch; width:100%; }
+.featured-item{ min-width:0 !important; box-sizing:border-box !important; }
+.featured-item--ghost{ visibility:hidden; }
+
+@media (max-width: 576px){
+  .featured-row{ grid-template-columns:repeat(2, minmax(0,1fr)) !important; gap:10px; }
+}
+</style>
+
+<script>
+(function(){
+  const slider = document.querySelector('.featured-slider');
+  if(!slider) return;
+
+  const track = slider.querySelector('.featured-track');
+  const slides = Array.from(track.children);
+  const prevBtn = slider.querySelector('.nav.prev');
+  const nextBtn = slider.querySelector('.nav.next');
+
+  let index = 0;
+  function update(){
+    const maxIndex = Math.max(0, slides.length - 1);
+    index = Math.max(0, Math.min(index, maxIndex));
+    track.style.transform = 'translateX(' + (-index * 100) + '%)';
+    slides.forEach(s => s.classList.remove('is-current'));
+    if(slides[index]) slides[index].classList.add('is-current');
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === maxIndex;
+  }
+  prevBtn.addEventListener('click', ()=>{ index--; update(); });
+  nextBtn.addEventListener('click', ()=>{ index++; update(); });
+
+  // 터치 스와이프
+  let startX=null;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', e => {
+    if(startX==null) return;
+    const dx = e.changedTouches[0].clientX - startX; startX=null;
+    if(Math.abs(dx)>40){ index += (dx>0 ? -1 : 1); update(); }
+  }, {passive:true});
+
+  // 키보드
+  slider.addEventListener('keydown', e => {
+    if(e.key==='ArrowLeft'){ index--; update(); }
+    if(e.key==='ArrowRight'){ index++; update(); }
+  });
+
+  update();
+})();
+</script>
+
+
+
 
 {% endif %}
 

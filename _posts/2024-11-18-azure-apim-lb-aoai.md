@@ -5,7 +5,7 @@ author: taeyok
 tag: [APIM, Azure OpenAI]
 category: [ Solution ]
 image: assets/images/thumnails/taeyok-lb.png
-
+featured: true
 ---
 
 이 글은 원문인 [Azure OpenAI Service Load Balancing with Azure API Management — Code Samples - Microsoft Learn](https://learn.microsoft.com/ko-kr/samples/azure-samples/azure-openai-apim-load-balancing/azure-openai-service-load-balancing-with-azure-api-management/)를 번역한 내용임을 밝힙니다.
