@@ -4,7 +4,7 @@ title:  "📢 퍼블릭 프리뷰: FUSE 기반 BlobNFS 성능 및 확장성 향�
 author: jyseong
 tag: [ azure blob storage, Azure HPC ]
 category: [ Solution ]
-image: assets/images/jyseong/images/2025-07-07 - Accelerating BlobNFS throughput & scale with FUSE for superior performance/header.png
+image: assets/images/jyseong/images/2025-07-07-Accelerating BlobNFS throughput & scale with FUSE for superior performance/header.png
 ---
 
 ### 작성자 : [niranja1890](https://techcommunity.microsoft.com/users/niranja1890/446007)
