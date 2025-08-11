@@ -64,7 +64,7 @@ Azure Private DNS는 하이브리드 및 멀티 테넌트 환경에서 이름 �
 **활성화 방법**:
 Azure private DNS zones으로 이동 -> zone 선택 -> Virtual netowrk link -> 편집 옵션
 
-![Configuration options](./assets/images/jyseong/images/2025-07-01 - DNS best practices for implementation in Azure Landing Zones/image.png)
+![Configuration options](./assets/images/jyseong/images/2025-07-01-DNS best practices for implementation in Azure Landing Zones/image.png)
 
 **참고 문서**: [https://learn.microsoft.com/en-us/azure/dns/private-dns-fallback](https://learn.microsoft.com/en-us/azure/dns/private-dns-fallback)
 
@@ -97,7 +97,7 @@ DNS 쿼리를 방화벽을 통해 검사하지 않고, 방화벽을 우회하여
 ---
 이 설정을 통해 온-프레미스 Active Directory DNS와 Azure Private DNS가 원활하게 연동됩니다.
 
-![Conditional forwaders](../assets/images/jyseong/images/2025-07-01 - DNS best practices for implementation in Azure Landing Zones/image1.png)
+![Conditional forwaders](../assets/images/jyseong/images/2025-07-01-DNS best practices for implementation in Azure Landing Zones/image1.png)
 
 **참고 사항**
 
@@ -107,7 +107,7 @@ DNS 쿼리를 방화벽을 통해 검사하지 않고, 방화벽을 우회하여
 > 이 옵션을 사용하면 조건부 전달자가 Active Directory에 저장되고 복제되는데,  
 > 복잡한 멀티 구독·멀티 환경에서 문제를 일으킬 수 있습니다.
 
-![Store this conditional forwarder in Active Directory and replicate as follows](../assets/images/jyseong/images/2025-07-01 - DNS best practices for implementation in Azure Landing Zones/image2.png)
+![Store this conditional forwarder in Active Directory and replicate as follows](../assets/images/jyseong/images/2025-07-01-DNS best practices for implementation in Azure Landing Zones/image2.png)
 
 **참고 문서** : [https://github.com/dmauser/PrivateLink/tree/master/DNS-Integration-Scenarios#43-on-premises-dns-server-conditional-forwarder-considerations](https://github.com/dmauser/PrivateLink/tree/master/DNS-Integration-Scenarios#43-on-premises-dns-server-conditional-forwarder-considerations)
 
