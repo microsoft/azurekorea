@@ -1,4 +1,4 @@
-name: Build & Deploy Jekyll (with plugins)
+name: Build & Deploy Jekyll (custom plugins)
 
 on:
   push:
@@ -17,26 +17,33 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
-      # Jekyll Pages 빌더(플러그인 포함)
       - uses: actions/configure-pages@v5
 
-      # lockfile에 linux 플랫폼이 없을 때 대비(보강)
-      - name: Ensure Linux platform in Gemfile.lock
-        run: |
-          bundle lock --add-platform x86_64-linux || true
-          bundle lock --add-platform ruby || true
-
-      # Gemfile 기반 빌드(_site 생성). v2 플러그인 허용
-      - uses: actions/jekyll-build-pages@v1
+      - uses: ruby/setup-ruby@v1
         with:
-          source: ./
-          destination: ./_site
+          ruby-version: '3.3'
+          bundler-cache: false
 
-      # 산출물 업로드
+      - name: Install Bundler
+        run: gem install bundler
+
+      - name: Ensure linux platforms in lockfile
+        run: |
+          if [ -f Gemfile.lock ]; then
+            bundle lock --add-platform x86_64-linux || true
+            bundle lock --add-platform ruby || true
+          fi
+
+      - name: Bundle install
+        run: bundle install --jobs 4 --retry 3
+
+      - name: Build site
+        run: bundle exec jekyll build --trace
+        env:
+          JEKYLL_ENV: production
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
