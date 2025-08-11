@@ -1,25 +1,26 @@
-{% if paginator.total_pages > 1 %}
-<div class="pagination">
+{% if paginator and paginator.total_pages > 1 %}
+<nav class="pagination" aria-label="Pagination">
   {% if paginator.previous_page %}
-    <a class="ml-1 mr-1" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+    <a class="page-prev" href="{{ paginator.previous_page_path | replace:'/index.html','/' | relative_url }}">&laquo; Prev</a>
   {% else %}
-    <span>&laquo; Prev</span>
+    <span class="page-prev disabled">&laquo; Prev</span>
   {% endif %}
 
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      <span class="ml-1 mr-1">{{ page }}</span>
-    {% elsif page == 1 %}
-      <a class="ml-1 mr-1" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-    {% else %}
-      <a class="ml-1 mr-1" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-    {% endif %}
-  {% endfor %}
+  {% if paginator.page_trail %}
+    {% for t in paginator.page_trail %}
+      {% assign href = t.path | replace:'/index.html','/' | relative_url %}
+      {% if t.num == paginator.page %}
+        <span class="page-number current">{{ t.num }}</span>
+      {% else %}
+        <a class="page-number" href="{{ href }}">{{ t.num }}</a>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 
   {% if paginator.next_page %}
-    <a class="ml-1 mr-1" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+    <a class="page-next" href="{{ paginator.next_page_path | replace:'/index.html','/' | relative_url }}">Next &raquo;</a>
   {% else %}
-    <span>Next &raquo;</span>
+    <span class="page-next disabled">Next &raquo;</span>
   {% endif %}
-</div>
+</nav>
 {% endif %}

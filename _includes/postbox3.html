@@ -1,0 +1,76 @@
+{%- comment -%}
+postbox3.html
+- 3열 카드용: 바깥 컬럼만 col-lg-4 col-md-6 로 설정
+- include 사용법:
+    {% include postbox3.html post=post %}
+  또는 기존처럼 루프 내에서 그냥 {% include postbox3.html %} 도 동작
+{%- endcomment -%}
+
+{%- assign p = include.post | default: post -%}
+{%- assign author = site.authors[p.author] -%}
+
+<div class="col-lg-4 col-md-6 mb-30px">
+  <div class="listrecent">
+    <div class="card h-100">
+      <a href="{{ site.baseurl }}{{ p.url }}">
+        {% if p.image %}
+          {% if site.lazyimages == "enabled" %}
+            <img class="img-fluid lazyimg"
+                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII="
+                 data-src="{% if p.image contains '://' %}{{ p.image }}{% else %}{{ site.baseurl }}/{{ p.image }}{% endif %}"
+                 alt="{{ p.title | escape }}">
+          {% else %}
+            <img class="img-fluid"
+                 src="{% if p.image contains '://' %}{{ p.image }}{% else %}{{ site.baseurl }}/{{ p.image }}{% endif %}"
+                 alt="{{ p.title | escape }}">
+          {% endif %}
+        {% endif %}
+      </a>
+
+      <div class="card-body card-block">
+        <h2 class="card-title">
+          <a class="text-dark" href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+          {% if p.rating %}
+          <div class="mb-2 mt-2 font-weight-normal">
+            {% include star_rating_postbox.html %}
+          </div>
+          {% endif %}
+        </h2>
+
+        <h4 class="card-text">{{ p.excerpt | strip_html | truncatewords: 26 }}</h4>
+      </div>
+
+      <div class="card-footer b-0 bg-white mt-auto">
+        <div class="wrapfooter">
+          {% if p.author %}
+            <span class="meta-footer-thumb">
+              {% if author and author.avatar %}
+                <img class="author-thumb" src="{{ site.baseurl }}/{{ author.avatar }}" alt="{{ author.display_name }}">
+              {% elsif author and author.gravatar %}
+                <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
+              {% endif %}
+            </span>
+            <span class="author-meta">
+              {% if author and author.web %}
+                <span class="post-name"><a target="_blank" href="{{ author.web }}">{{ author.display_name }}</a></span><br/>
+              {% elsif author %}
+                <span class="post-name">{{ author.display_name }}</span><br/>
+              {% endif %}
+          {% endif %}
+              <span class="post-date">{{ p.date | date_to_string }}</span>
+            </span>
+
+          <span class="post-read-more">
+            <a href="{{ site.baseurl }}{{ p.url }}" title="Read Story">
+              <svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25" aria-hidden="true">
+                <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+              </svg>
+            </a>
+          </span>
+
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div><!-- /.card -->
+  </div><!-- /.listrecent -->
+</div>
