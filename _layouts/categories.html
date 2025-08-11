@@ -1,24 +1,36 @@
 ---
-title: "Categories"
 layout: default
-permalink: "/categories.html"
 ---
 
-<div class="row listrecent">
-    {% for category in site.categories %}
-    <div class="section-title col-md-12 mt-4">
-        <h2 id="{{ category[0] | replace: " "," -" }}">Category <span class="text-capitalize">{{ category[0] }}</span>
-        </h2>
-    </div>
-    {% assign pages_list = category[1] %}
-    {% for post in pages_list %}
-    {% if post.title != null %}
-    {% if group == null or group == post.group %}
-    {% include postbox.html %}
-    {% endif %}
-    {% endif %}
+<div class="row listrecent" data-layout="categories">
+  <div class="section-title col-md-12 mt-4">
+    <h2>
+      Category
+      <span class="text-capitalize">{{ page.title | default: page.category }}</span>
+    </h2>
+  </div>
+
+  {% if paginator and paginator.posts %}
+    {% for post in paginator.posts %}
+      {% include postbox3.html post=post %}
     {% endfor %}
-    {% assign pages_list = nil %}
-    {% assign group = nil %}
+  {% elsif page.posts %}
+    {% for post in page.posts %}
+      {% include postbox3.html post=post %}
     {% endfor %}
+  {% elsif page.category %}
+    {% assign target = page.category %}
+    {% for post in site.posts %}
+      {% assign hit = false %}
+      {% if post.categories and post.categories contains target %}{% assign hit = true %}{% endif %}
+      {% if hit == false and post.category and post.category contains target %}{% assign hit = true %}{% endif %}
+      {% if hit %}{% include postbox3.html post=post %}{% endif %}
+    {% endfor %}
+  {% endif %}
 </div>
+
+<section class="navigation">
+  <span class="navigation" role="navigation">
+    {% include pagination.html %}
+  </span>
+</section>

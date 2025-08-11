@@ -130,23 +130,36 @@ authors:
 
 # Plugins
 plugins:
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-archives
-    
-# Archives
-jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
-  permalinks:
-    category: '/category/:name/'
-    
-# Pagination 
-paginate: 3
-paginate_path: /page:num/
+
+# v2 기본 설정(페이지별로 덮어쓸 것)
+pagination:
+  enabled: true
+  per_page: 6
+  permalink: '/page/:num/'
+  title: ':title - page :num'
+  sort_field: 'date'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+
+# 카테고리 자동 페이지(각 /category/:cat/ 생성)
+autopages:
+  enabled: true
+  categories:
+    enabled: false
+    layouts:
+      - categories
+    permalink: '/category/:cat/'
+    title: ':cat'
+  collections:
+    enabled: false
+  tags:
+    enabled: false
     
 # Other
 markdown: kramdown

@@ -1,47 +1,26 @@
-{% comment %}
-Pagination: show page numbers in blocks of 10 with « Prev and Next ».
-{% endcomment %}
-
-{% assign max_pages = 10 %}
-{% assign current_page = paginator.page %}
-{% assign total_pages = paginator.total_pages %}
-
-{%- comment -%}
-현재 블록 계산 (1~10, 11~20, ...)
-{%- endcomment -%}
-{% assign current_block = current_page | minus: 1 | divided_by: max_pages %}
-{% assign start_page = current_block | times: max_pages | plus: 1 %}
-{% assign end_page = start_page | plus: max_pages | minus: 1 %}
-{% if end_page > total_pages %}
-  {% assign end_page = total_pages %}
-{% endif %}
-
-<nav class="pagination">
-  {%- if start_page > 1 -%}
-    {% assign prev_block_page = start_page | minus: 1 %}
-    <a class="page-prev" href="{% if prev_block_page == 1 %}{{ site.baseurl }}/{% else %}{{ site.baseurl }}{{ site.paginate_path | replace: ':num', prev_block_page }}{% endif %}">&laquo; Prev</a>
-  {%- else -%}
+{% if paginator and paginator.total_pages > 1 %}
+<nav class="pagination" aria-label="Pagination">
+  {% if paginator.previous_page %}
+    <a class="page-prev" href="{{ paginator.previous_page_path | replace:'/index.html','/' | relative_url }}">&laquo; Prev</a>
+  {% else %}
     <span class="page-prev disabled">&laquo; Prev</span>
-  {%- endif -%}
+  {% endif %}
 
-  {%- for i in (start_page..end_page) -%}
-    {% if i == 1 %}
-      {% assign page_url = site.baseurl | append: '/' %}
-    {% else %}
-      {% assign page_url = site.baseurl | append: site.paginate_path | replace: ':num', i %}
-    {% endif %}
+  {% if paginator.page_trail %}
+    {% for t in paginator.page_trail %}
+      {% assign href = t.path | replace:'/index.html','/' | relative_url %}
+      {% if t.num == paginator.page %}
+        <span class="page-number current">{{ t.num }}</span>
+      {% else %}
+        <a class="page-number" href="{{ href }}">{{ t.num }}</a>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 
-    {% if i == current_page %}
-      <span class="page-number current">{{ i }}</span>
-    {% else %}
-      <a class="page-number" href="{{ page_url }}">{{ i }}</a>
-    {% endif %}
-  {%- endfor -%}
-
-  {%- if end_page < total_pages -%}
-    {% assign next_block_page = end_page | plus: 1 %}
-    <a class="page-next" href="{{ site.baseurl }}{{ site.paginate_path | replace: ':num', next_block_page }}">Next &raquo;</a>
-  {%- else -%}
+  {% if paginator.next_page %}
+    <a class="page-next" href="{{ paginator.next_page_path | replace:'/index.html','/' | relative_url }}">Next &raquo;</a>
+  {% else %}
     <span class="page-next disabled">Next &raquo;</span>
-  {%- endif -%}
+  {% endif %}
 </nav>
+{% endif %}
