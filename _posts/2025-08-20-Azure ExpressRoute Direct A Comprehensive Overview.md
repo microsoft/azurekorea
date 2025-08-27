@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Azure ExpressRoute Direct: 전반적인 설명"
+title:  "Azure ExpressRoute Direct: 개요"
 author: jyseong
 tag: [ Azure ExpressRoute Direct ]
 category: [ Solution ]
