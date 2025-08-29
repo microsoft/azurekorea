@@ -2,8 +2,9 @@
 layout: post
 title: "Azure Preview 서비스 변경 사항을 RSS로 추적하기"
 author: wonsungso
-categories: [Solution]
-tags: [Azure, Preview, RSS, Updates, Useful Tips]
+tag: [Azure, Preview, RSS, Updates, Useful Tips]
+category: [Solution]
+image: assets/images/thumnails/wonsungso_250829_preview_thumbnail.png
 ---
 
 Azure에서는 새로운 기능이 **Preview** 상태로 먼저 공개된 뒤, 일정 기간 후에 정식 출시(GA, Generally Available)되는 경우가 많습니다.  

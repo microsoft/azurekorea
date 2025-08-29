@@ -2,8 +2,9 @@
 layout: post
 title: "Azure Attestation: Confidential VM 보안 검증"
 author: wonsungso
-categories: [Solution]
-tags: [Azure, Attestation, Confidential VM, MAA]
+tag: [Azure, Attestation, Confidential VM, MAA]
+category: [Solution]
+image: assets/images/thumnails/wonsungso_250829_attestation_thumbnail.png
 ---
 
 오늘날 클라우드 환경에서는 **특정 규제, 보안 및 주권 요구사항을 준수하기 위해 클라우드 이용 고객이 워크로드의 신뢰성을 직접 검증할 수 있는 기술**이 점점 중요해지고 있습니다.  
