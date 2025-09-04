@@ -4,6 +4,7 @@ title:  "Generally Available: SSD 저장소 계정의 Ephemeral OS 디스크 지
 author: jyseong
 tag: [ Azure Disk ]
 category: [ Solution ]
+image: assets/images/jyseong/images/2025-07-17-Generally-Available-SSD-storage-account-support-for-Ephemeral-OS-disks/ephemeral-portal-temp.png
 ---
 
 ### 작성자 : [viveksingla](https://techcommunity.microsoft.com/users/viveksingla/1991463)

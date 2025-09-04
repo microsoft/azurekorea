@@ -4,6 +4,7 @@ title:  "Azure Data Factory(ADF)를 활용한 Azure 저장소 Blob의 수명 주
 author: jyseong
 tag: [ Azure Data Factory, Azure storage blobs, Lifecycle Management ]
 category: [ Solution ]
+image: assets/images/jyseong/images/2025-07-15-Lifecycle Management of Azure storage blobs using Azure Data Factory (ADF)/images.png
 ---
 
 ### 작성자 : [Deeksha_S_A](https://techcommunity.microsoft.com/users/deeksha_s_a/986540)
