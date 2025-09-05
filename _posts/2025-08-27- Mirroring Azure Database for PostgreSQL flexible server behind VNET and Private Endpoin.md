@@ -4,7 +4,7 @@ title:  "VNET 및 프라이빗 엔드포인트 뒤에 배치된 Azure Database f
 author: jyseong
 tag: [ Azure Database for PostgreSQL , Mirroring ]
 category: [ Solution ]
-image: assets/images/jyseong/images/2025-08-27-Mirroring Azure Database for PostgreSQL flexible server behind VNET and Private Endpoin/show-private-link-overview.png
+image: assets/images/jyseong/images/2025-08-27-Mirroring Azure Database for PostgreSQL flexible server behind VNET and Private Endpoint/show-private-link-overview.png
 ---
 
 ### 작성자 : [scoriani](https://techcommunity.microsoft.com/users/scoriani/218343)
