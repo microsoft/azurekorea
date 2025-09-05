@@ -4,7 +4,7 @@ title:  "VNET 및 프라이빗 엔드포인트 환경에서 Azure Database for P
 author: jyseong
 tag: [ Azure Database for PostgreSQL ]
 category: [ Solution ]
-image: assets/images/jyseong/images/2025-07-28/show-private-link-overview.png
+image: assets/images/jyseong/images/2025-07-28-Mirroring Azure Database for PostgreSQL flexible server behind VNET and Private Endpoint/show-private-link-overview.png
 featured: true
 ---
 

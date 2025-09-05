@@ -4,7 +4,7 @@ title:  "Azure에 GitHub Actions Self-hosted Runner 배포하기: 단계별 가�
 author: jyseong
 tag: [ Azure Virtual Machines , Github ]
 category: [ Solution ]
-image: assets/images/jyseong/images/2025-07-30/github.jpg
+image: assets/images/jyseong/images/2025-07-30-Deploying a GitHub Actions Self-hosted Runner on Azure A Step-by-Step Guide/github.jpg
 ---
 
 ### 작성자 : [NamanNihal](https://techcommunity.microsoft.com/users/namannihal/2904895)

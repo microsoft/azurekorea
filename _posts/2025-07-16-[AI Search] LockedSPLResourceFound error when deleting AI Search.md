@@ -4,7 +4,7 @@ title:  "[AI Search] AI Search 삭제 시 LockedSPLResourceFound 오류 발생"
 author: jyseong
 tag: [ Azure Search ]
 category: [ Solution ]
-image: assets/images/jyseong/images/2025-07-16/header.png
+image: assets/images/jyseong/images/2025-07-16-[AI Search] LockedSPLResourceFound error when deleting AI Search/header.png
 ---
 
 ### 작성자 : [SungGun_Lee](https://techcommunity.microsoft.com/users/sunggun_lee/1551033)

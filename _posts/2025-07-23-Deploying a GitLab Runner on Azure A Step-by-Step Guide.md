@@ -4,7 +4,7 @@ title:  "Azure에 GitLab Runner 배포하기: 단계별 가이드"
 author: jyseong
 tag: [ Azure Virtual Machines , Update ]
 category: [ Solution ]
-image: assets/images/jyseong/images/2025-07-23/urlupload.jpg
+image: assets/images/jyseong/images/2025-07-23-Deploying a GitLab Runner on Azure A Step-by-Step Guide/url_upload.jpg
 ---
 
 ### 작성자 : [NamanNihal](https://techcommunity.microsoft.com/users/namannihal/2904895)
