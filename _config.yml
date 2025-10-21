@@ -127,6 +127,12 @@ authors:
     avatar: 'assets/images/profiles/wonsungso.png'
     email: wonsungso@microsoft.com
     description: "SR TECHNICAL SPECIALIST"
+  changjuahn:
+    name: changjuahn
+    display_name: Changju Ahn
+    avatar: 'assets/images/profiles/changjuahn.jpg'
+    email: changjuahn@microsoft.com
+    description: "Solution Sepcialist"
 
 # Plugins
 plugins:
