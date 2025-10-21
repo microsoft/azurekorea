@@ -62,7 +62,7 @@ Agent Framework는 직관적이고 강력하게 설계되었습니다.
 - **설치**:
     - Python:
         ```
-        pip install agent-framework더 많은 선 표시
+        pip install agent-framework
         ```
     - .NET:
         ```
