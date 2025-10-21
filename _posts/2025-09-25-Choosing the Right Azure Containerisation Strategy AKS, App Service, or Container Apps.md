@@ -94,9 +94,6 @@ Kubernetes의 복잡성을 숨기고, 마이크로서비스, 이벤트 기반 �
 - Linux 컨테이너만 지원(Windows 컨테이너는 불가)
 - 일부 고급 네트워킹 및 사용자 지정 옵션은 AKS에 비해 제한적
 
-아래는 요청하신 표를 한국어로 번역하고 **Markdown 형식**으로 정리한 결과입니다:
-
-
 ## 주요 차이점
 
 | **기능**       | **Azure Kubernetes Service (AKS)** | **Azure App Service** | **Azure Container Apps**  |
