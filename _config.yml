@@ -133,6 +133,12 @@ authors:
     avatar: 'assets/images/profiles/changjuahn.jpg'
     email: changjuahn@microsoft.com
     description: "Solution Engineer"
+  t-heeyang:
+    name: t-heeyang
+    display_name: HeeChul Yang
+    avatar: 'assets/images/profiles/heeyang.jpg'
+    email: t-heeyang@microsoft.com
+    description: "Solution Engineer Intern"
 
 # Plugins
 plugins:
