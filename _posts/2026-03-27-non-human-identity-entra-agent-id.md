@@ -5,6 +5,7 @@ author: t-heeyang
 tag: [ Azure, Entra ID, AI Agent, Security ]
 category: [ Solution ]
 image: assets/images/thumnails/microsoft-entra-agent-identities-diagram.png
+featured: true
 ---
 
 ## AI Agent는 '누구'인가

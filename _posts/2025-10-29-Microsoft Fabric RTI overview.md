@@ -4,11 +4,10 @@ title:  "Microsoft Fabric Real-Time Intelligence(RTI) 개요"
 author: jyseong
 tag: [ Microsoft Fabric ]
 category: [ Solution ]
+image: assets/images/thumnails/fabric_rti.png
 ---
 
 **해당 글은 [Microsoft Fabric Real-Time Intelligence(RTI)](https://github.com/jiyongseong/azure-articles/blob/main/2025-10-29-Microsoft%20Fabric%20RTI%20overview/2025-10-29-Microsoft%20Fabric%20RTI%20overview.md)에 등록된 글입니다.**
-
-# Microsoft Fabric Real-Time Intelligence(RTI) 
 
 ## 개요
 Microsoft Fabric의 Real-Time Intelligence(RTI)는 조직 내 모든 운영 신호와 이벤트 데이터를 실시간으로 수집, 분석, 시각화, 그리고 자동화된 액션까지 연결하는 통합 플랫폼입니다. 

@@ -5,9 +5,8 @@ author: taeyok
 tag: [ Github, Security, GHAS, Code Scanning ]
 category: [ Solution ]
 image: assets/images/thumnails/inspectocat.jpg
+featured: true
 ---
-
-# GitHub Advanced Security의 Code Security로 구현하는 DevSecOps
 
 ## 🔐 GHAS(GitHub Advanced Security)란?
 
