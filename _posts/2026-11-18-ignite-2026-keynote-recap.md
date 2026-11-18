@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Microsoft Ignite 2026 오프닝 키노트 주제별 정리: Copilot, Microsoft IQ, Foundry, Agent 365, Perception"
+title:  "Microsoft Ignite 2026 오프닝 키노트: Copilot, Microsoft IQ, Foundry, Agent 365, Perception"
 author: junghunlee
 tag: [ Ignite, Ignite 2026, Microsoft 365 Copilot, Microsoft IQ, Foundry, MAI, Agent 365, Perception ]
 category: [ Update ]
@@ -37,6 +37,7 @@ Microsoft Ignite 2026 오프닝 키노트의 핵심 내용을 정리했습니다
 | 9 | AI 투명성 이니셔티브 | 자체적으로 만든 AI를 외부에서 검증할 수 있게 한다 | - |
 | 10 | 인프라 | 에이전트가 쏟아내는 속도를 받쳐주는 인프라 구축한다 | GitHub |
 | 11 | 사람과 조직의 변화 | 기술보다 일하는 방식을 바꾸는 것이 더 어렵다 | Publicis |
+
 
 ## 1. Frontier Ecosystem: 키노트 전체의 핵심 주제
 
