@@ -21,6 +21,14 @@ Microsoft Ignite 2026 오프닝 키노트의 핵심 내용을 정리했습니다
 > - **가중치**: AI 모델이 학습한 내용이 담긴 핵심 데이터입니다. 가중치를 가지고 있으면 그 모델을 직접 조정하고 운영할 수 있습니다.
 > - **파인튜닝**: 이미 만들어진 AI 모델에 회사의 데이터를 추가로 학습시켜서 우리 업무에 맞게 다듬는 작업입니다.
 
+> **이 글에 나오는 주요 발표자**
+> - **Satya Nadella**: Microsoft 회장 겸 CEO. 키노트를 열고 전체 비전(Frontier Ecosystem)과 Copilot, 모델, 인프라 발표를 맡았습니다.
+> - **Judson Althoff**: Microsoft 상업 사업(Commercial Business) 부문 CEO. Satya Nadella 다음으로 무대에 올라 이후 키노트를 이끌었습니다. 본인의 실제 업무 환경에서 Copilot을 시연하고, 고객 사례를 소개하고, 고객과 대담하고, 마무리 발언까지 맡았습니다. 이 글의 "Microsoft 내부 시연"과 "마무리"가 이 발표자의 순서입니다.
+> - **Jacob Andreou**: Copilot 담당 EVP(부사장급 임원). Copilot의 새 기능과 비용 구조를 설명했습니다.
+> - **Arun Ulag**: Azure 담당 EVP. Microsoft IQ를 설명했습니다.
+> - **Mustafa Suleyman**: Microsoft AI(MAI) CEO. Microsoft가 만든 모델을 소개했습니다.
+> - **David Weston**: 에이전트 보안 담당 CVP(부사장급 임원). Perception을 시연했습니다.
+
 ## 이번 키노트의 큰 주제
 
 | # | 주제 | 한 줄 요약 | 대표 고객 사례 |
