@@ -335,5 +335,7 @@ Microsoft는 이 변화에 고객들이 빠르게 적응할 수 있도록 하기
 
 2만명 가까이 수용되는 San Francisco Chase Field 경기장을 가득 채운 고객 및 파트너사의 직원들도 함께 느끼셨을 것이라고 생각합니다.
 
+![Ignite 2026 키노트 현장: 경기장을 가득 채운 관객](../assets/images/junghunlee/keynote_crowd.gif)
+
 이런 변화를 한국의 고객과 함께 성공적으로 만들어 내고 세계에 자랑할 수 있는 기회를 만들기 위해 Microsoft의 한국 직원들은 노력하겠습니다.  
 
