@@ -7,13 +7,11 @@ category: [ Update ]
 image: assets/images/thumnails/ignite-2026-keynote.jpg
 ---
 
-Microsoft Ignite 2026 오프닝 키노트(약 2시간 25분)의 주요 발표를 발표 순서가 아닌 주제별로 정리합니다. 각 주제 아래에 해당 내용이 나오는 영상 구간을 함께 표기하였으므로, 원본 영상에서 바로 확인할 수 있습니다.
+Microsoft Ignite 2026 오프닝 키노트(약 2시간 25분)의 주요 발표를 발표 순서가 아닌 주제별로 정리합니다. 원본 영상은 아래에서 확인할 수 있습니다.
 
 [![Microsoft Ignite: Opening Keynote 2026](http://img.youtube.com/vi/ZR4v1c4CClc/0.jpg)](https://youtu.be/ZR4v1c4CClc)
 
 ## 1. 키노트의 핵심 메시지: Frontier Ecosystem
-
-*영상 구간: 3:11 ~ 7:00*
 
 키노트 전반의 주제는 **Frontier Ecosystem**입니다. 개별 모델의 성능보다, 기업이 AI를 조직 전체에서 활용하기 위해 필요한 요소를 다음 세 가지로 구분하여 설명하였습니다.
 
@@ -26,8 +24,6 @@ Microsoft Ignite 2026 오프닝 키노트(약 2시간 25분)의 주요 발표를
 이후 발표 내용은 대부분 위 세 가지 중 하나에 대응됩니다.
 
 ## 2. Microsoft 365 Copilot
-
-*영상 구간: 7:01 ~ 13:00, 38:00 ~ 1:07:00*
 
 ### 업무용 운영체제로서의 Copilot
 
@@ -69,8 +65,6 @@ Accenture가 디자인 파트너로 참여하여 영업 조직에 적용하는 �
 
 ## 3. Microsoft IQ
 
-*영상 구간: 13:40 ~ 16:00, 1:13:26 ~ 1:25:00*
-
 Microsoft는 Work IQ, Fabric IQ, Foundry IQ를 통합한 **Microsoft IQ**를 출시하였습니다. 기업의 데이터와 업무 컨텍스트를 한곳에서 관리하고, 이를 여러 에이전트가 일관되게 활용하도록 하는 엔터프라이즈 컨텍스트 관리 플랫폼입니다.
 
 ![Microsoft IQ 구성](../assets/images/junghunlee/fig07_microsoft_iq_architecture.jpg)
@@ -87,8 +81,6 @@ Microsoft는 Work IQ, Fabric IQ, Foundry IQ를 통합한 **Microsoft IQ**를 출
 **Unilever 사례**: 클레임 처리 에이전트가 청구 금액의 불일치(한 건당 2,000달러 이상)를 탐지하고, 과거 유사 사례 4건과 의사결정자를 함께 제시하였습니다. 담당자의 판단은 IQ에 기록되어 이후 동일 유형의 건에 재활용되며, 해당 건에서 약 12,000달러의 가치를 보호하였다고 설명하였습니다.
 
 ## 4. 모델 라인업
-
-*영상 구간: 16:17 ~ 22:15*
 
 Microsoft는 단일 모델이 아니라 작업별로 최적의 지능을 경제적으로 매핑하는 **멀티모델 시스템**을 강조하였습니다.
 
@@ -117,8 +109,6 @@ Foundry에서는 Copilot과 GitHub Copilot에 사용되는 관리형 에이전�
 
 ## 5. AI 비용 관리: Agent 365 Business Analytics
 
-*영상 구간: 22:49 ~ 23:35, 54:09 ~ 55:45, 1:59:00 ~ 2:00:40*
-
 데모 전반에서 작업별 비용이 함께 제시되었습니다. 신규 발표된 **Agent 365 Business Analytics**는 AI 사용량을 ERP와 같이 관리하는 기능으로 설명되었습니다.
 
 ![Agent 365 Business Analytics](../assets/images/junghunlee/fig12_agent365_business_analytics.jpg)
@@ -132,8 +122,6 @@ Foundry에서는 Copilot과 GitHub Copilot에 사용되는 관리형 에이전�
 IT 관리자는 Cowork 사용 전에 지출 한도를 설정할 수 있으며, 한도에 도달하면 사용자가 증액을 요청하는 방식으로 운영됩니다. 현재는 Frontier 공개 프리뷰 상태이며, 위임된 지출 정책과 Microsoft 외 에이전트의 비용 가시성은 12월에 제공될 예정입니다.
 
 ## 6. 에이전트 관리와 보안
-
-*영상 구간: 22:25 ~ 29:00, 1:47:25 ~ 2:16:00*
 
 ### Agent 365
 
@@ -165,8 +153,6 @@ AI를 활용한 공격이 증가하는 상황에서, 발표에서는 다음과 �
 
 ### AI 투명성 이니셔티브
 
-*영상 구간: 26:38 ~ 29:06*
-
 모델이 스스로에 대해 설명하는 내용은 독립적인 증거가 될 수 없고, 한 모델이 다른 모델을 감시하는 방식에도 같은 한계가 있다는 문제 인식에서 출발한 이니셔티브입니다.
 
 ![AI Transparency Initiative](../assets/images/junghunlee/fig14_transparency_initiative.jpg)
@@ -176,8 +162,6 @@ AI를 활용한 공격이 증가하는 상황에서, 발표에서는 다음과 �
 3. 동일한 표준을 Microsoft의 모델과 제품(Copilot 포함)에 적용합니다.
 
 ## 7. 인프라
-
-*영상 구간: 29:06 ~ 36:42*
 
 ### 에이전트 워크로드를 위한 아키텍처
 
