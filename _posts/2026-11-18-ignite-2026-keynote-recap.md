@@ -189,7 +189,7 @@ MAI 팀은 한계도 솔직하게 밝혔습니다. 이 모델들은 고객이 �
 2. **자동 라우팅**: 요청마다 알맞은 모드, 모델, 노력 수준을 자동으로 골라 줍니다.
 3. **Work IQ로 한 번에 정확하게**: 회사의 맥락을 알고 있어서 처음부터 제대로 해내는 것이 가장 큰 비용 절감이라고 설명했습니다.
 
-새로 발표된 **Agent 365 Business Analytics**는 AI에 쓴 돈과 만들어 낸 가치를 한눈에 보여 주는 기능입니다. 단순히 토큰이 얼마나 쓰였는지가 아니라 **AI가 어떤 일을 해냈는지**까지 측정합니다. 목표는 "AI에 돈을 덜 쓰는 것이 아니라 더 많은 가치를 얻는 것"이라고 설명했습니다.
+새로 발표된 **Agent 365 Business Analytics**의 목표는 "AI에 돈을 덜 쓰는 것이 아니라 더 많은 가치를 얻는 것"이라고 합니다.
 
 ![Agent 365 Business Analytics](../assets/images/junghunlee/fig12_agent365_business_analytics.jpg)
 
@@ -221,7 +221,7 @@ MAI 팀은 한계도 솔직하게 밝혔습니다. 이 모델들은 고객이 �
 ## 7. 에이전트 관리: Agent 365
 
 
-Agent 365는 회사가 직원에게 하던 계정 관리, 접근 권한 관리, 보안 점검을 **에이전트에게도 똑같이 적용**하는 관리 서비스입니다. 현재 5,000만 개 이상의 에이전트가 관리되고 있습니다. Microsoft 제품뿐 아니라 AWS, OpenAI, Anthropic, Databricks, Snowflake, Salesforce 등 다른 회사 플랫폼의 에이전트도 함께 관리하도록 "열려 있게" 설계했다고 합니다.
+Agent 365는 회사가 직원에게 하던 계정 관리, 접근 권한 관리, 보안 점검을 **에이전트에게도 똑같이 적용**하는 관리 서비스입니다. 현재 5,000만 개 이상의 에이전트가 관리되고 있습니다. Microsoft 제품뿐 아니라 AWS, OpenAI, Anthropic, Databricks, Snowflake, Salesforce 등 다른 회사 플랫폼의 에이전트도 함께 관리하도록 설계했다고 합니다.
 
 ![Agent 365 생태계](../assets/images/junghunlee/fig23_agent365_ecosystem.jpg)
 
