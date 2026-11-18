@@ -152,6 +152,13 @@ authors:
     email: haewon.shin@microsoft.com
     description: "SR AI APPS SOLUTION ENGINEER"
 
+  junghunlee:
+    name: junghunlee
+    display_name: Junghun Lee
+    avatar: 'assets/images/profiles/junghunlee.jpg'
+    email: junghunlee@microsoft.com
+    description: "Sr Solution Engineer Manager at Microsoft Korea"
+
 # Plugins
 plugins:
   - jekyll-paginate-v2
