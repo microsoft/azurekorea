@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Microsoft Ignite 2026 오프닝 키노트 주제별 정리: Copilot, Microsoft IQ, Foundry, Agent 365, Perception"
+title:  "Microsoft Ignite 2026 오프닝 키노트: Copilot, Microsoft IQ, Foundry, Agent 365, Perception"
 author: junghunlee
 tag: [ Ignite, Ignite 2026, Microsoft 365 Copilot, Microsoft IQ, Foundry, MAI, Agent 365, Perception ]
 category: [ Update ]
