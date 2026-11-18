@@ -135,7 +135,7 @@ Microsoft IQ 시연에서는, 클레임 분석가가 Copilot에게 질문하면 
 ![Alaska Airlines 에이전트 개선 결과](../assets/images/junghunlee/fig26_alaska_airlines_result.jpg)
 
 | 단계 | 방법 | 정확도(정확히 일치) | 월 200만 건 처리 시 월 비용 |
-|---|---|---|---|---|
+|---|---|---|---|
 | Build | 기본 모델(gpt-6-astra)에 33단어짜리 지시문 | 87% | 약 184,500달러 |
 | Optimize | Foundry 옵티마이저가 지시문과 도구 설명을 716단어로 개선 | 94% | 약 740,400달러 |
 | Train | 지시문의 내용을 모델에 학습시킴(파인튜닝, MAI Code 2 Flash) | 97% | 약 3,260달러(227배 저렴) |
